@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Priyoject-Win98</title>
+    <link rel="icon" type="image/png" href="https://win98icons.alexmeub.com/icons/png/windows-0.png">
+
+    <link rel="shortcut icon" href="https://win98icons.alexmeub.com/icons/png/windows-0.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+
+<body>
+    <h1 class="wallpaper">&lt;portfolio&gt;</h1>
+    <main class="desktop" id="desktop" onclick="unselectDesktopIcons()">
+        <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-about')"
+            tabindex="0">
+            <div class="desktop-icon-box"><img src="https://win98icons.alexmeub.com/icons/png/computer-4.png"></div>
+            <div class="desktop-label">About Me</div>
+        </div>
+
+        <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('resume')"
+            tabindex="0">
+            <div class="desktop-icon-box"><img src="https://win98icons.alexmeub.com/icons/png/notepad_file-2.png"></div>
+            <div class="desktop-label">Resume.pdf</div>
+        </div>
+
+        <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-tech')"
+            tabindex="0">
+            <div class="desktop-icon-box"><img src="https://win98icons.alexmeub.com/icons/png/appwizard-4.png"></div>
+            <div class="desktop-label">Tech Stack</div>
+        </div>
+
+        <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-projects')"
+            tabindex="0">
+            <div class="desktop-icon-box"><img
+                    src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png">
+            </div>
+            <div class="desktop-label">Projects</div>
+        </div>
+
+        <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-contact')"
+            tabindex="0">
+            <div class="desktop-icon-box"><img src="https://win98icons.alexmeub.com/icons/png/envelope_closed-0.png"
+                    style="height: 48px; width: 48px;">
+            </div>
+            <div class="desktop-label">Contact</div>
+        </div>
+
+        <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-music')"
+            tabindex="0">
+            <div class="desktop-icon-box"><img src="https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-3.png">
+            </div>
+            <div class="desktop-label">Music Player</div>
+        </div>
+
+        <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-games')"
+            tabindex="0">
+            <div class="desktop-icon-box"><img src="https://win98icons.alexmeub.com/icons/png/mouse-4.png"></div>
+            <div class="desktop-label">Mini Games</div>
+        </div>
+
+        <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-fruit')"
+            tabindex="0">
+            <div class="desktop-icon-box"><img src="https://win98icons.alexmeub.com/icons/png/joystick-4.png"></div>
+            <div class="desktop-label">Games</div>
+        </div>
+    </main>
+
+    <section class="start-menu" id="startMenu">
+        <div class="start-menu-container">
+            <div class="start-menu-sidebar">
+                <span>Portfolio 98</span>
+            </div>
+            <div class="start-menu-links">
+                <div class="start-menu-item" onclick="openWindowFromMenu('win-about')">
+                    <img src="https://win98icons.alexmeub.com/icons/png/computer-4.png">About Me
+                </div>
+                <div class="start-menu-item" onclick="openWindowFromMenu('resume')">
+                    <img src="https://win98icons.alexmeub.com/icons/png/notepad_file-2.png">Resume
+                </div>
+                <div class="start-menu-item" onclick="openWindowFromMenu('win-tech')">
+                    <img src="https://win98icons.alexmeub.com/icons/png/appwizard-4.png">Software Stack
+                </div>
+                <div class="start-menu-item" onclick="openWindowFromMenu('win-projects')">
+                    <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png"> Projects
+                    Explorer
+                </div>
+                <div class="start-menu-item" onclick="openWindowFromMenu('win-contact')">
+                    <img src="https://win98icons.alexmeub.com/icons/png/envelope_closed-0.png"> Contact
+                </div>
+                <div class="start-menu-item" onclick="openWindowFromMenu('win-music')">
+                    <img src="https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-3.png"> Music Player
+                </div>
+                <div class="start-menu-item" onclick="openWindowFromMenu('win-games')">
+                    <img src="https://win98icons.alexmeub.com/icons/png/mouse-4.png"> Mini Games
+                </div>
+                <div class="start-menu-item" onclick="openWindowFromMenu('win-fruit')">
+                    <img src="https://win98icons.alexmeub.com/icons/png/joystick-4.png"> Games
+                </div>
+                <div class="start-menu-divider"></div>
+                <div class="start-menu-item" onclick="alert('Shutdown simulation only.')">
+                    <i class="fa-solid fa-power-off"></i> Shut Down...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="window" id="win-about" data-title="About Me" style="width: 610px; top: 70px; left: 145px;">
+        <div class="title-bar">
+            <div class="title-left">
+                <img src="https://win98icons.alexmeub.com/icons/png/computer-4.png">
+                <span>About_Me.exe</span>
+            </div>
+            <div class="title-controls">
+                <button class="win-btn" onclick="minimizeWindow('win-about')" title="Minimize">_</button>
+                <button class="win-btn" onclick="toggleMaximize('win-about')" title="Maximize">□</button>
+                <button class="win-btn" onclick="closeWindow('win-about')" title="Close">×</button>
+            </div>
+        </div>
+
+        <div class="window-body">
+            <div class="window-content">
+                <div class="about-layout-clean">
+                    <div class="about-header">
+                        <div class="profile-photo-clean">
+                            <img src="assets/profile/pixart.png" alt="Priyo Adi Wibowo Profile Photo">
+                        </div>
+
+                        <div class="about-header-info">
+                            <h2>Priyo Adi Wibowo</h2>
+                            <p>Electronics Engineer/p>
+                                <span>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Pasuruan, East Java, Indonesia
+                                </span>
+                        </div>
+                    </div>
+
+                    <div class="win98-divider"></div>
+
+                    <div class="info-grid">
+                        <div class="label-cell">Name</div>
+                        <div>Priyo Adi Wibowo</div>
+
+                        <div class="label-cell">Location</div>
+                        <div>Pasuruan, East Java, Indonesia</div>
+
+                        <div class="label-cell">Project Done</div>
+                        <div>10+ Projects</div>
+
+                        <div class="label-cell">Focus</div>
+                        <div>Embedded System Development, IoT Development & Web Development</div>
+
+                        <div class="label-cell">Availability</div>
+                        <div>Internship, Freelance, Contract, & Fulltime</div>
+                    </div>
+
+                    <div class="win98-divider"></div>
+
+                    <div class="bio">
+                        I am an Electronics Engineering graduate with hands-on experience in embedded systems,
+                        IoT projects, and web development. I build practical solutions that connect hardware,
+                        software, and data through microcontrollers, sensors, web interfaces, and databases.
+                        <br><br>
+                        My work includes ESP32, Arduino, sensor integration, control systems, responsive frontend
+                        design, backend programming, database integration, authentication, and application logic.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="window" id="resume" data-title="About Me"
+        style="width: 610px; height: 580px; top: 70px; left: 145px;">
+        <div class="title-bar">
+            <div class="title-left">
+                <img src="https://win98icons.alexmeub.com/icons/png/notepad_file-2.png">
+                <span>Resume.pdf</span>
+            </div>
+            <div class="title-controls">
+                <button class="win-btn" onclick="minimizeWindow('resume')" title="Minimize">_</button>
+                <button class="win-btn" onclick="toggleMaximize('resume')" title="Maximize">□</button>
+                <button class="win-btn" onclick="closeWindow('resume')" title="Close">×</button>
+            </div>
+        </div>
+
+        <div class="window-body">
+            <iframe src="assets/cv/cv-Priyo.pdf" class="resume-frame" title="Resume PDF">
+            </iframe>
+        </div>
+    </section>
+
+    <section class="window" id="win-tech" data-title="Tech Stack" style="width: 560px; top: 120px; left: 210px;">
+        <div class="title-bar">
+            <div class="title-left">
+                <img src="https://win98icons.alexmeub.com/icons/png/appwizard-4.png">
+                <span>Tech_Stack.sys</span>
+            </div>
+            <div class="title-controls">
+                <button class="win-btn" onclick="minimizeWindow('win-tech')" title="Minimize">_</button>
+                <button class="win-btn" onclick="toggleMaximize('win-tech')" title="Maximize">□</button>
+                <button class="win-btn" onclick="closeWindow('win-tech')" title="Close">×</button>
+            </div>
+        </div>
+
+        <div class="window-body">
+            <div class="menubar">
+                <button class="tab-btn active" onclick="switchTab('tech-stack', this)">Languages</button>
+                <button class="tab-btn" onclick="switchTab('software-stack', this)">Software</button>
+                <button class="tab-btn" onclick="switchTab('infrastructure-stack', this)">Infrastructure</button>
+            </div>
+
+            <div class="window-content-fixed" id="tech-stack">
+                <div class="stack-grid">
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/html5/default.svg">HTML
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/css/default.svg">CSS
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/javascript/default.svg">JavaScript
+                    </div>
+                    <div class="stack-card">
+                        <img class="khusus"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg">PHP
+                    </div>
+                    <div class="stack-card">
+                        <img class="khusus"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg">MySQL
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/cplusplus/default.svg">C++
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/c/default.svg">C
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/python/default.svg">Python
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/dart/default.svg">Dart
+                    </div>
+                </div>
+            </div>
+
+            <div class="window-content-fixed" id="software-stack" style="display: none;">
+                <div class="stack-grid">
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/bash/light.svg">Terminal
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/visual-studio-code/default.svg">VS
+                        Code</div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/git/default.svg">Git
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/github/default.svg">GitHub
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/npm/default.svg">npm
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/flutter/default.svg">Flutter
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/arduino/default.svg">Arduino
+                        IDE</div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/platformio/default.svg">PlatformIO
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/proteus/default.svg">Proteus
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/kicad/default.svg">KiCad
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/easyeda/default.svg">EasyEDA
+                    </div>
+                </div>
+            </div>
+
+            <div class="window-content-fixed" id="infrastructure-stack" style="display: none;">
+                <div class="stack-grid">
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/linux/default.svg">Linux
+                    </div>
+                    <div class="stack-card"><img
+                            src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/windows/default.svg">Windows
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="window" id="win-projects" data-title="Projects Explorer"
+        style="width: 780px; height: 590px; top: 50px; left: 105px;">
+        <div class="title-bar">
+            <div class="title-left">
+                <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png">
+                <span>C:\Portfolio\Projects</span>
+            </div>
+            <div class="title-controls">
+                <button class="win-btn" onclick="minimizeWindow('win-projects')" title="Minimize">_</button>
+                <button class="win-btn" onclick="toggleMaximize('win-projects')" title="Maximize">□</button>
+                <button class="win-btn" onclick="closeWindow('win-projects')" title="Close">×</button>
+            </div>
+        </div>
+
+        <div class="window-body">
+            <div class="project-explorer">
+                <div class="explorer-toolbar">
+                    <button class="toolbar-btn" onclick="goBack()" title="Back"><i
+                            class="fa-solid fa-arrow-left"></i></button>
+                    <button class="toolbar-btn" onclick="goForward()" title="Forward"><i
+                            class="fa-solid fa-arrow-right"></i></button>
+                    <button class="toolbar-btn" onclick="refreshCurrentLocation()" title="Refresh">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+
+                    <div class="address-bar">
+                        <i class="fa-solid fa-folder-tree"></i>
+                        <input type="text" id="addressInput" value="C:\Portfolio" autocomplete="off" spellcheck="false"
+                            onkeydown="handleAddressKey(event)" />
+                    </div>
+                </div>
+
+                <div class="explorer-main">
+                    <aside class="explorer-sidebar">
+                        <div class="explorer-header">
+                            <span>Explorer</span>
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </div>
+
+                        <div class="explorer-tree-root">
+                            <div class="tree-folder open">
+                                <div class="tree-folder-row tree-level-0" data-folder="root"
+                                    onclick="handleRootFolderClick(this)">
+                                    <span class="tree-caret"><i class="fa-solid fa-chevron-right"></i></span>
+                                    <span class="tree-icon tree-folder-icon"><i
+                                            class="fa-solid fa-folder-open"></i></span>
+                                    <span class="tree-label">portfolio</span>
+                                </div>
+
+                                <div class="tree-children">
+                                    <div class="tree-folder open">
+                                        <div class="tree-folder-row tree-level-1" data-folder="embeddedTree"
+                                            onclick="handleFolderClick(this, 'embeddedTree')">
+                                            <span class="tree-caret"><i class="fa-solid fa-chevron-right"></i></span>
+                                            <span class="tree-icon tree-folder-icon"><i
+                                                    class="fa-solid fa-folder-open"></i></span>
+                                            <span class="tree-label">Embedded System</span>
+                                        </div>
+                                        <div class="tree-children" id="embeddedTree"></div>
+                                    </div>
+
+                                    <div class="tree-folder open">
+                                        <div class="tree-folder-row tree-level-1" data-folder="iotTree"
+                                            onclick="handleFolderClick(this, 'iotTree')">
+                                            <span class="tree-caret"><i class="fa-solid fa-chevron-right"></i></span>
+                                            <span class="tree-icon tree-folder-icon"><i
+                                                    class="fa-solid fa-folder-open"></i></span>
+                                            <span class="tree-label">IoT Development</span>
+                                        </div>
+                                        <div class="tree-children" id="iotTree"></div>
+                                    </div>
+
+                                    <div class="tree-folder open">
+                                        <div class="tree-folder-row tree-level-1" data-folder="webTree"
+                                            onclick="handleFolderClick(this, 'webTree')">
+                                            <span class="tree-caret"><i class="fa-solid fa-chevron-right"></i></span>
+                                            <span class="tree-icon tree-folder-icon"><i
+                                                    class="fa-solid fa-folder-open"></i></span>
+                                            <span class="tree-label">Web Development</span>
+                                        </div>
+                                        <div class="tree-children" id="webTree"></div>
+                                    </div>
+
+                                    <div class="tree-folder open">
+                                        <div class="tree-folder-row tree-level-1" data-folder="mobileTree"
+                                            onclick="handleFolderClick(this, 'mobileTree')">
+                                            <span class="tree-caret"><i class="fa-solid fa-chevron-right"></i></span>
+                                            <span class="tree-icon tree-folder-icon"><i
+                                                    class="fa-solid fa-folder-open"></i></span>
+                                            <span class="tree-label">Mobile Apps</span>
+                                        </div>
+                                        <div class="tree-children" id="mobileTree"></div>
+                                    </div>
+
+                                    <div class="tree-folder open">
+                                        <div class="tree-folder-row tree-level-1" data-folder="pyTree"
+                                            onclick="handleFolderClick(this, 'pyTree')">
+                                            <span class="tree-caret"><i class="fa-solid fa-chevron-right"></i></span>
+                                            <span class="tree-icon tree-folder-icon"><i
+                                                    class="fa-solid fa-folder-open"></i></span>
+                                            <span class="tree-label">Python</span>
+                                        </div>
+                                        <div class="tree-children" id="pyTree"></div>
+                                    </div>
+
+                                    <div class="tree-folder">
+                                        <div class="tree-folder-row tree-level-1" onclick="handleFolderClick(this)">
+                                            <span class="tree-caret"><i class="fa-solid fa-chevron-right"></i></span>
+                                            <span class="tree-icon tree-folder-icon"><i
+                                                    class="fa-solid fa-folder"></i></span>
+                                            <span class="tree-label">assets</span>
+                                        </div>
+                                        <div class="tree-children">
+                                            <div class="tree-file-row tree-level-2">
+                                                <span class="tree-caret"></span>
+                                                <span class="tree-icon tree-file-icon"><i
+                                                        class="fa-solid fa-image"></i></span>
+                                                <span class="tree-label">profile-photo.png</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tree-folder">
+                                        <div class="tree-folder-row tree-level-1" onclick="handleFolderClick(this)">
+                                            <span class="tree-caret"><i class="fa-solid fa-chevron-right"></i></span>
+                                            <span class="tree-icon tree-folder-icon"><i
+                                                    class="fa-solid fa-folder"></i></span>
+                                            <span class="tree-label">css</span>
+                                        </div>
+                                        <div class="tree-children">
+                                            <div class="tree-file-row tree-level-2">
+                                                <span class="tree-caret"></span>
+                                                <span class="tree-icon tree-file-icon"><i
+                                                        class="fa-solid fa-code"></i></span>
+                                                <span class="tree-label">styles.css</span>
+                                            </div>
+                                            <div class="tree-file-row tree-level-2">
+                                                <span class="tree-caret"></span>
+                                                <span class="tree-icon tree-file-icon"><i
+                                                        class="fa-solid fa-code"></i></span>
+                                                <span class="tree-label">responsive.css</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tree-folder">
+                                        <div class="tree-folder-row tree-level-1" onclick="handleFolderClick(this)">
+                                            <span class="tree-caret"><i class="fa-solid fa-chevron-right"></i></span>
+                                            <span class="tree-icon tree-folder-icon"><i
+                                                    class="fa-solid fa-folder"></i></span>
+                                            <span class="tree-label">script</span>
+                                        </div>
+                                        <div class="tree-children">
+                                            <div class="tree-file-row tree-level-2">
+                                                <span class="tree-caret"></span>
+                                                <span class="tree-icon tree-file-icon"><i
+                                                        class="fa-brands fa-js"></i></span>
+                                                <span class="tree-label">main.js</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tree-file-row tree-level-1">
+                                        <span class="tree-caret"></span>
+                                        <span class="tree-icon tree-file-icon"><i
+                                                class="fa-brands fa-git-alt"></i></span>
+                                        <span class="tree-label">.gitignore</span>
+                                    </div>
+
+                                    <div class="tree-file-row tree-level-1">
+                                        <span class="tree-caret"></span>
+                                        <span class="tree-icon tree-file-icon"><i class="fa-brands fa-html5"></i></span>
+                                        <span class="tree-label">index.html</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <section class="explorer-right">
+                        <div class="file-path-header">
+                            <i class="fa-solid fa-folder-open"></i>
+                            <span id="selectedPath">portfolio</span>
+                        </div>
+
+                        <article class="detail-pane" id="rightPane">
+                            <div class="folder-view" id="folderView"></div>
+
+                            <div class="project-detail-view" id="projectDetailView" style="display: none;">
+                                <div class="project-preview" id="projectPreview">
+                                    <div>
+                                        <i class="fa-solid fa-file-image"></i>
+                                        Select a project file
+                                    </div>
+                                </div>
+
+                                <h2 class="detail-title" id="projectTitle">No file selected</h2>
+
+                                <p class="detail-description" id="projectDescription">
+                                    Click a project file from the left Explorer tree or from this folder view.
+                                </p>
+
+                                <strong>Tech Stack:</strong>
+                                <div class="tag-row" id="projectTags">
+                                    <span class="tag">
+                                        <i class="fa-solid fa-circle-info"></i> Waiting for selection
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="window" id="win-contact" data-title="Contact" style="width: 520px; top: 170px; left: 310px;">
+        <div class="title-bar">
+            <div class="title-left">
+                <img src="https://win98icons.alexmeub.com/icons/png/envelope_closed-0.png">
+                <span>Contact_Manager.exe</span>
+            </div>
+            <div class="title-controls">
+                <button class="win-btn" onclick="minimizeWindow('win-contact')" title="Minimize">_</button>
+                <button class="win-btn" onclick="toggleMaximize('win-contact')" title="Maximize">□</button>
+                <button class="win-btn" onclick="closeWindow('win-contact')" title="Close">×</button>
+            </div>
+        </div>
+
+        <div class="window-body">
+            <div class="window-content">
+                <div class="contact-list">
+                    <a href="mailto:priyoadiwibowo28@gmail.com" class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>priyoadiwibowo28@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/amblackpearl" class="contact-item">
+                        <i class="fa-brands fa-github"></i>
+                        <span>github.com/amblackpearl</span>
+                    </a>
+                    <a href="https://www.instagram.com/messedit.up/" class="contact-item">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>@messedit.up</span>
+                    </a>
+                    <a class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Pasuruan, East Java, Indonesia</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="window" id="win-music" data-title="Music Player"
+        style="width: 470px; height: 560px; top: 120px; left: 360px;">
+        <div class="title-bar">
+            <div class="title-left">
+                <img src="https://win98icons.alexmeub.com/icons/png/cd_audio_cd_a-3.png">
+                <span>Music_Player.exe</span>
+            </div>
+
+            <div class="title-controls">
+                <button class="win-btn" onclick="minimizeWindow('win-music')" title="Minimize">_</button>
+                <button class="win-btn" onclick="toggleMaximize('win-music')" title="Maximize">□</button>
+                <button class="win-btn" onclick="closeWindow('win-music')" title="Close">×</button>
+            </div>
+        </div>
+
+        <div class="window-body">
+            <div class="music-player">
+                <div class="music-display">
+                    <div class="music-art">
+                        <i class="fa-solid fa-compact-disc" id="musicDiscIcon"></i>
+                    </div>
+
+                    <div class="music-info">
+                        <div class="music-label">Now Playing</div>
+                        <div class="music-title" id="musicTitle">No song selected</div>
+                        <div class="music-artist" id="musicArtist">Alkateri</div>
+                    </div>
+                </div>
+
+                <div class="hidden-youtube-box" style="display: none;">
+                    <div id="youtubeMusicPlayer"></div>
+                </div>
+
+                <div class="music-progress-wrap">
+                    <span id="currentTime">00:00</span>
+                    <input type="range" id="musicProgress" min="0" max="100" value="0">
+                    <span id="durationTime">00:00</span>
+                </div>
+
+                <div class="music-controls">
+                    <button class="music-btn" onclick="toggleShuffle()" title="Shuffle">
+                        <i class="fa-solid fa-shuffle" id="shuffleIcon"></i>
+                    </button>
+
+                    <button class="music-btn" onclick="previousSong()" title="Previous">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </button>
+
+                    <button class="music-btn play-btn" onclick="togglePlay()" title="Play / Pause">
+                        <i class="fa-solid fa-play" id="playIcon"></i>
+                    </button>
+
+                    <button class="music-btn" onclick="stopSong()" title="Stop">
+                        <i class="fa-solid fa-stop"></i>
+                    </button>
+
+                    <button class="music-btn" onclick="nextSong()" title="Next">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </button>
+
+                    <button class="music-btn" onclick="toggleRepeat()" title="Repeat">
+                        <i class="fa-solid fa-repeat" id="repeatIcon"></i>
+                    </button>
+
+                    <button class="music-btn" onclick="toggleMute()" title="Mute">
+                        <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
+                    </button>
+                </div>
+
+                <div class="volume-row">
+                    <span>Volume</span>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="80">
+                </div>
+
+                <div class="playlist-box">
+                    <div class="playlist-header">
+                        <i class="fa-solid fa-list"></i>
+                        Playlist
+                    </div>
+
+                    <div class="playlist" id="playlist"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="window" id="win-games" data-title="Mini Games"
+        style="width: 620px; height: 560px; top: 95px; left: 180px;">
+        <div class="title-bar">
+            <div class="title-left">
+                <img src="https://win98icons.alexmeub.com/icons/png/mouse-4.png">
+                <span>Mini_Games.exe</span>
+            </div>
+
+            <div class="title-controls">
+                <button class="win-btn" onclick="minimizeWindow('win-games')" title="Minimize">_</button>
+                <button class="win-btn" onclick="toggleMaximize('win-games')" title="Maximize">□</button>
+                <button class="win-btn" onclick="closeWindow('win-games')" title="Close">×</button>
+            </div>
+        </div>
+
+        <div class="window-body">
+            <div class="game-window-content">
+                <div class="game-topbar">
+                    <div>
+                        <strong>Click The Target</strong>
+                        <span class="game-subtitle">Hit as many targets as possible in 30 seconds.</span>
+                    </div>
+
+                    <button class="game-start-btn" onclick="startTargetGame()">
+                        <i class="fa-solid fa-play"></i> Start
+                    </button>
+                </div>
+
+                <div class="game-stats">
+                    <div class="game-stat-box">
+                        <span>Score</span>
+                        <strong id="gameScore">0</strong>
+                    </div>
+
+                    <div class="game-stat-box">
+                        <span>Time</span>
+                        <strong id="gameTime">30</strong>
+                    </div>
+
+                    <div class="game-stat-box">
+                        <span>Status</span>
+                        <strong id="gameStatus">Ready</strong>
+                    </div>
+                </div>
+
+                <div class="game-area" id="gameArea">
+                    <div class="game-message" id="gameMessage">
+                        Press Start to play.
+                    </div>
+                    <button class="target-dot" id="targetDot" onclick="hitTarget(event)" aria-label="Target"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="window" id="win-fruit" data-title="Fruit Slice Game"
+        style="width: 760px; height: 560px; top: 80px; left: 180px;">
+        <div class="title-bar">
+            <div class="title-left">
+                <img src="https://win98icons.alexmeub.com/icons/png/joystick-4.png">
+                <span>Fruit_Slice_Game.exe</span>
+            </div>
+
+            <div class="title-controls">
+                <button class="win-btn" onclick="minimizeWindow('win-fruit')" title="Minimize">_</button>
+                <button class="win-btn" onclick="toggleMaximize('win-fruit')" title="Maximize">□</button>
+                <button class="win-btn" onclick="closeWindow('win-fruit')" title="Close">×</button>
+            </div>
+        </div>
+
+        <div class="window-body game-window-body">
+            <div class="game-panel">
+                <div class="game-topbar">
+                    <div class="game-stat">
+                        <i class="fa-solid fa-star"></i>
+                        Score: <span id="fruitScore">0</span>
+                    </div>
+
+                    <div class="game-stat game-lives" id="fruitLives"></div>
+
+                    <button class="game-btn" onclick="startFruitGame()">
+                        <i class="fa-solid fa-play"></i> Start
+                    </button>
+
+                    <button class="game-btn" onclick="resetFruitGame()">
+                        <i class="fa-solid fa-rotate-right"></i> Reset
+                    </button>
+                </div>
+
+                <div class="game-canvas-wrap">
+                    <canvas id="fruitGameCanvas"></canvas>
+
+                    <div class="game-overlay" id="fruitGameOverlay">
+                        <h3>Fruit Slice</h3>
+                        <p>Swipe or drag across fruits to slice them.</p>
+                        <button class="game-btn" onclick="startFruitGame()">Start Game</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="taskbar">
+        <div class="taskbar-left">
+            <button class="start-button" id="startButton" onclick="toggleStartMenu(event)">
+                <img src="https://win98icons.alexmeub.com/icons/png/windows-0.png">
+                Start
+            </button>
+            <div class="taskbar-divider"></div>
+            <div class="taskbar-apps" id="taskbarApps"></div>
+        </div>
+
+        <div class="system-tray">
+            <span id="clock">00:00</span>
+        </div>
+    </footer>
+
+    <script>
+        'use strict'; const a0_0x1ec203 = a0_0x4eb6; (function (_0x3424da, _0x1fc0d0) { const _0x5a5567 = a0_0x4eb6, _0x37201d = _0x3424da(); while (!![]) { try { const _0x49fee1 = parseInt(_0x5a5567(0x26a)) / 0x1 * (parseInt(_0x5a5567(0x27a)) / 0x2) + parseInt(_0x5a5567(0x208)) / 0x3 * (-parseInt(_0x5a5567(0x2d8)) / 0x4) + parseInt(_0x5a5567(0x25d)) / 0x5 + -parseInt(_0x5a5567(0x22a)) / 0x6 * (-parseInt(_0x5a5567(0x1da)) / 0x7) + parseInt(_0x5a5567(0x11b)) / 0x8 * (parseInt(_0x5a5567(0x1d3)) / 0x9) + parseInt(_0x5a5567(0x198)) / 0xa * (parseInt(_0x5a5567(0x1f3)) / 0xb) + -parseInt(_0x5a5567(0x288)) / 0xc; if (_0x49fee1 === _0x1fc0d0) break; else _0x37201d['push'](_0x37201d['shift']()); } catch (_0x48cb3a) { _0x37201d['push'](_0x37201d['shift']()); } } }(a0_0xf9c4, 0xa7ea3)); const projectsData = { 'embeddedTree': [{ 'title': a0_0x1ec203(0x1c8), 'fileName': a0_0x1ec203(0x1ef), 'icon': a0_0x1ec203(0x188), 'folder': a0_0x1ec203(0x29b), 'image': a0_0x1ec203(0x1db), 'photoLabel': 'G-code\x20/\x20Pulse\x20Generator', 'description': a0_0x1ec203(0x249), 'tech': ['ESP32', 'C++', a0_0x1ec203(0x2da), a0_0x1ec203(0x2d3), a0_0x1ec203(0x2cf)] }], 'iotTree': [{ 'title': a0_0x1ec203(0x148), 'fileName': a0_0x1ec203(0x1ab), 'icon': a0_0x1ec203(0x1e4), 'folder': a0_0x1ec203(0x2a2), 'image': a0_0x1ec203(0x136), 'photoLabel': a0_0x1ec203(0x264), 'description': a0_0x1ec203(0x1a9), 'tech': [a0_0x1ec203(0x1a3), a0_0x1ec203(0x124), a0_0x1ec203(0x14d), a0_0x1ec203(0x1d1), a0_0x1ec203(0x218), 'CSS', 'JS'] }, { 'title': a0_0x1ec203(0x2c8), 'fileName': a0_0x1ec203(0x19d), 'icon': a0_0x1ec203(0x182), 'folder': 'IoT\x20Development', 'image': a0_0x1ec203(0x2ca), 'photoLabel': 'Soil\x20Sensor\x20Web\x20Monitor', 'description': a0_0x1ec203(0x19c), 'tech': [a0_0x1ec203(0x1a3), a0_0x1ec203(0x179), 'HTTP', 'HTML', 'CSS', 'JS'] }, { 'title': a0_0x1ec203(0x220), 'fileName': a0_0x1ec203(0x2d1), 'icon': 'fa-solid\x20fa-lightbulb', 'folder': a0_0x1ec203(0x2a2), 'image': a0_0x1ec203(0x1e2), 'photoLabel': a0_0x1ec203(0x15e), 'description': a0_0x1ec203(0x1ba), 'tech': [a0_0x1ec203(0x1a3), a0_0x1ec203(0x27e), a0_0x1ec203(0x17e), a0_0x1ec203(0x16a), a0_0x1ec203(0x16f), a0_0x1ec203(0x218), a0_0x1ec203(0x29f), 'JS'] }], 'webTree': [{ 'title': a0_0x1ec203(0x297), 'fileName': a0_0x1ec203(0x1d9), 'icon': a0_0x1ec203(0x18b), 'folder': a0_0x1ec203(0x259), 'photoLabel': a0_0x1ec203(0x1d6), 'image': 'assets/project/laute.webp', 'description': a0_0x1ec203(0x1ff), 'tech': [a0_0x1ec203(0x218), a0_0x1ec203(0x29f), a0_0x1ec203(0x2c3)] }, { 'title': a0_0x1ec203(0x1ed), 'fileName': a0_0x1ec203(0x162), 'icon': a0_0x1ec203(0x227), 'folder': 'Web\x20Development', 'photoLabel': a0_0x1ec203(0x1b1), 'image': a0_0x1ec203(0x2c4), 'description': a0_0x1ec203(0x1a7), 'tech': [a0_0x1ec203(0x1bb), a0_0x1ec203(0x155), a0_0x1ec203(0x1e9), 'CRUD', a0_0x1ec203(0x218), 'CSS', 'JS'] }, { 'title': a0_0x1ec203(0x295), 'fileName': a0_0x1ec203(0x262), 'icon': a0_0x1ec203(0x1c2), 'folder': a0_0x1ec203(0x259), 'photoLabel': a0_0x1ec203(0x1e0), 'description': a0_0x1ec203(0x2a9), 'tech': ['HTML', a0_0x1ec203(0x29f), a0_0x1ec203(0x251), a0_0x1ec203(0x1c1)] }, { 'title': 'ToolE\x20Web\x20Apps', 'fileName': a0_0x1ec203(0x12a), 'icon': a0_0x1ec203(0x18b), 'folder': a0_0x1ec203(0x259), 'image': a0_0x1ec203(0x282), 'photoLabel': 'Engineering\x20Calculator\x20App', 'description': a0_0x1ec203(0x2c0), 'tech': ['HTML', a0_0x1ec203(0x29f), 'JavaScript'] }, { 'title': a0_0x1ec203(0x1bd), 'fileName': a0_0x1ec203(0x19b), 'icon': a0_0x1ec203(0x18b), 'folder': a0_0x1ec203(0x259), 'image': a0_0x1ec203(0x1dd), 'photoLabel': a0_0x1ec203(0x23f), 'description': 'a\x20comprehensive,\x20simple\x20and\x20informative\x20web\x20profile\x20and\x20achievement\x20for\x20Koni\x20Kota\x20Pasuruan.', 'tech': [a0_0x1ec203(0x218), a0_0x1ec203(0x29f), a0_0x1ec203(0x2c3)] }], 'mobileTree': [{ 'title': a0_0x1ec203(0x25f), 'fileName': a0_0x1ec203(0x22b), 'icon': a0_0x1ec203(0x266), 'folder': a0_0x1ec203(0x161), 'image': a0_0x1ec203(0x2b6), 'photoLabel': 'Engineering\x20Calculator\x20App', 'description': a0_0x1ec203(0x157), 'tech': [a0_0x1ec203(0x17a), a0_0x1ec203(0x153), a0_0x1ec203(0x25a), a0_0x1ec203(0x189)] }, { 'title': 'BowAI\x20Mobile\x20Apps', 'fileName': a0_0x1ec203(0x1c4), 'icon': a0_0x1ec203(0x165), 'folder': a0_0x1ec203(0x161), 'image': a0_0x1ec203(0x132), 'photoLabel': a0_0x1ec203(0x2cb), 'description': a0_0x1ec203(0x237), 'tech': [a0_0x1ec203(0x17a), a0_0x1ec203(0x153), a0_0x1ec203(0x13d), a0_0x1ec203(0x147)] }], 'pyTree': [{ 'title': a0_0x1ec203(0x169), 'fileName': a0_0x1ec203(0x217), 'icon': 'fa-brands\x20fa-python', 'folder': a0_0x1ec203(0x258), 'image': 'assets/project/scribdUnlocker.webp', 'photoLabel': a0_0x1ec203(0x11d), 'description': a0_0x1ec203(0x1ae), 'tech': [a0_0x1ec203(0x258), a0_0x1ec203(0x1e5)] }, { 'title': 'RS485\x20Lamp\x20Controller\x20Diagnostic\x20Software', 'fileName': a0_0x1ec203(0x2cc), 'icon': 'fa-brands\x20fa-python', 'folder': a0_0x1ec203(0x258), 'image': a0_0x1ec203(0x29c), 'photoLabel': a0_0x1ec203(0x2ad), 'description': a0_0x1ec203(0x186), 'tech': [a0_0x1ec203(0x258), 'Pyside6', a0_0x1ec203(0x16a), a0_0x1ec203(0x1f8)] }] }; let highestZ = 0x14, historyStack = [], historyPointer = -0x1, selectedProject = null; const windowState = {}, folderMap = { 'root': { 'type': 'folder', 'label': a0_0x1ec203(0x1b8), 'path': a0_0x1ec203(0x21a), 'treeId': null }, 'embeddedTree': { 'type': 'folder', 'label': a0_0x1ec203(0x29b), 'path': a0_0x1ec203(0x27f), 'treeId': a0_0x1ec203(0x1bf) }, 'iotTree': { 'type': a0_0x1ec203(0x275), 'label': a0_0x1ec203(0x2a2), 'path': a0_0x1ec203(0x21d), 'treeId': a0_0x1ec203(0x1a6) }, 'webTree': { 'type': 'folder', 'label': a0_0x1ec203(0x259), 'path': a0_0x1ec203(0x26b), 'treeId': a0_0x1ec203(0x18f) }, 'mobileTree': { 'type': a0_0x1ec203(0x275), 'label': 'Mobile\x20Apps', 'path': a0_0x1ec203(0x1b6), 'treeId': a0_0x1ec203(0x1b3) }, 'pyTree': { 'type': 'folder', 'label': a0_0x1ec203(0x258), 'path': a0_0x1ec203(0x225), 'treeId': a0_0x1ec203(0x1f9) } }; document[a0_0x1ec203(0x1a0)](a0_0x1ec203(0x23a), () => { const _0x2f46a2 = a0_0x1ec203; renderProjectTreeFiles(), navigateToFolder(_0x2f46a2(0x22c), !![]), initMusicPlayer(), loadYouTubeAPI(), initFruitGame(), initDraggableWindows(), updateClock(), setInterval(updateClock, 0x3e8), document[_0x2f46a2(0x1a0)](_0x2f46a2(0x25b), _0x2f7ce1 => { const _0x4f77c0 = _0x2f46a2, _0x5b9334 = document[_0x4f77c0(0x216)](_0x4f77c0(0x205)), _0x5bd8a5 = document[_0x4f77c0(0x216)]('startButton'); !_0x5b9334[_0x4f77c0(0x200)](_0x2f7ce1['target']) && !_0x5bd8a5[_0x4f77c0(0x200)](_0x2f7ce1[_0x4f77c0(0x184)]) && closeStartMenu(); }); }); function renderProjectTreeFiles() { const _0x2c52c8 = a0_0x1ec203; Object[_0x2c52c8(0x2be)](projectsData)[_0x2c52c8(0x210)](_0x536682 => { const _0x4af7a1 = _0x2c52c8, _0xc43777 = document[_0x4af7a1(0x216)](_0x536682); _0xc43777[_0x4af7a1(0x11c)] = '', projectsData[_0x536682]['forEach']((_0x2343e5, _0x51c470) => { const _0x5ef129 = _0x4af7a1, _0x3bea44 = document['createElement'](_0x5ef129(0x254)); _0x3bea44['className'] = 'tree-file-row\x20tree-level-2', _0x3bea44[_0x5ef129(0x11f)][_0x5ef129(0x18d)] = _0x536682, _0x3bea44[_0x5ef129(0x11f)][_0x5ef129(0x13a)] = _0x51c470, _0x3bea44[_0x5ef129(0x11c)] = _0x5ef129(0x1a4) + _0x2343e5[_0x5ef129(0x18e)] + _0x5ef129(0x167) + _0x2343e5[_0x5ef129(0x285)] + _0x5ef129(0x2dd), _0x3bea44['addEventListener'](_0x5ef129(0x142), _0x503272 => { _0x503272['stopPropagation'](), selectProject(_0x536682, _0x51c470, !![]); }), _0xc43777[_0x5ef129(0x12b)](_0x3bea44); }); }); } function toggleTreeFolder(_0x40f0b2) { const _0x56dd1b = a0_0x1ec203, _0x47014c = _0x40f0b2[_0x56dd1b(0x20b)], _0x55fd4b = _0x40f0b2['querySelector'](_0x56dd1b(0x214)); _0x47014c['classList'][_0x56dd1b(0x226)](_0x56dd1b(0x191)), _0x47014c[_0x56dd1b(0x271)][_0x56dd1b(0x200)](_0x56dd1b(0x191)) ? (_0x55fd4b[_0x56dd1b(0x271)]['remove'](_0x56dd1b(0x256)), _0x55fd4b[_0x56dd1b(0x271)]['add'](_0x56dd1b(0x2bd))) : (_0x55fd4b[_0x56dd1b(0x271)][_0x56dd1b(0x1b9)](_0x56dd1b(0x2bd)), _0x55fd4b[_0x56dd1b(0x271)]['add']('fa-folder')); } function handleFolderClick(_0x56f04b, _0x1762cb) { toggleTreeFolder(_0x56f04b), navigateToFolder(_0x1762cb, !![]); } function handleRootFolderClick(_0xf7a428) { toggleTreeFolder(_0xf7a428), navigateToFolder('root', !![]); } function showFolderContents(_0x258b1f, _0x33c153 = ![]) { const _0x3b8e97 = a0_0x1ec203, _0x289191 = projectsData[_0x258b1f]; if (!_0x289191) return; const _0x1f81ba = folderMap[_0x258b1f][_0x3b8e97(0x230)]; selectedProject = null, document[_0x3b8e97(0x294)](_0x3b8e97(0x229))[_0x3b8e97(0x210)](_0x583fca => { const _0xe7e2c6 = _0x3b8e97; _0x583fca[_0xe7e2c6(0x271)][_0xe7e2c6(0x1b9)](_0xe7e2c6(0x21b)); }), document[_0x3b8e97(0x294)](_0x3b8e97(0x235))[_0x3b8e97(0x210)](_0x5b6888 => { const _0x1a8e69 = _0x3b8e97; _0x5b6888[_0x1a8e69(0x271)][_0x1a8e69(0x1b9)](_0x1a8e69(0x21b)); }); const _0x40a40e = document[_0x3b8e97(0x1c7)](_0x3b8e97(0x192) + _0x258b1f + '\x22]'); if (_0x40a40e) _0x40a40e[_0x3b8e97(0x271)][_0x3b8e97(0x1a8)](_0x3b8e97(0x21b)); setAddress(folderMap[_0x258b1f][_0x3b8e97(0x298)]), document[_0x3b8e97(0x216)](_0x3b8e97(0x2c6))[_0x3b8e97(0x12d)] = _0x3b8e97(0x24c) + _0x1f81ba; const _0x59931c = document[_0x3b8e97(0x216)](_0x3b8e97(0x250)), _0x1599ae = document[_0x3b8e97(0x216)](_0x3b8e97(0x151)); _0x1599ae[_0x3b8e97(0x14e)][_0x3b8e97(0x163)] = _0x3b8e97(0x243), _0x59931c[_0x3b8e97(0x14e)][_0x3b8e97(0x163)] = _0x3b8e97(0x194), _0x59931c[_0x3b8e97(0x11c)] = '', _0x289191[_0x3b8e97(0x210)]((_0x3c163a, _0x361066) => { const _0x366b8d = _0x3b8e97, _0x5823d1 = document[_0x366b8d(0x2aa)](_0x366b8d(0x254)); _0x5823d1[_0x366b8d(0x2c2)] = 'folder-item-card', _0x5823d1[_0x366b8d(0x11c)] = _0x366b8d(0x257) + _0x3c163a[_0x366b8d(0x18e)] + _0x366b8d(0x1d8) + _0x3c163a[_0x366b8d(0x285)] + _0x366b8d(0x2d0), _0x5823d1[_0x366b8d(0x1a0)](_0x366b8d(0x142), () => { navigateToFile(_0x258b1f, _0x361066, !![]); }), _0x59931c['appendChild'](_0x5823d1); }), _0x33c153 && pushHistory({ 'type': _0x3b8e97(0x275), 'treeId': _0x258b1f, 'path': folderMap[_0x258b1f][_0x3b8e97(0x298)] }), updateNavigationButtons(); } function showRootFolderContents(_0x511390 = ![]) { const _0x16ea21 = a0_0x1ec203; selectedProject = null, document[_0x16ea21(0x294)](_0x16ea21(0x229))[_0x16ea21(0x210)](_0x1dcbd2 => { const _0x5c8b07 = _0x16ea21; _0x1dcbd2['classList'][_0x5c8b07(0x1b9)](_0x5c8b07(0x21b)); }), document[_0x16ea21(0x294)]('.tree-folder-row')[_0x16ea21(0x210)](_0x5d101c => { const _0x2300c9 = _0x16ea21; _0x5d101c[_0x2300c9(0x271)][_0x2300c9(0x1b9)]('active'); }), setAddress(folderMap['root'][_0x16ea21(0x298)]), document['getElementById']('selectedPath')['textContent'] = _0x16ea21(0x1b8); const _0x1e6675 = document[_0x16ea21(0x216)](_0x16ea21(0x250)), _0x1bac52 = document[_0x16ea21(0x216)]('projectDetailView'); _0x1bac52[_0x16ea21(0x14e)]['display'] = _0x16ea21(0x243), _0x1e6675[_0x16ea21(0x14e)][_0x16ea21(0x163)] = _0x16ea21(0x194), _0x1e6675[_0x16ea21(0x11c)] = ''; const _0x700206 = [{ 'name': _0x16ea21(0x29b), 'icon': 'fa-solid\x20fa-folder-open', 'treeId': _0x16ea21(0x1bf) }, { 'name': _0x16ea21(0x2a2), 'icon': _0x16ea21(0x255), 'treeId': _0x16ea21(0x1a6) }, { 'name': _0x16ea21(0x259), 'icon': _0x16ea21(0x255), 'treeId': _0x16ea21(0x18f) }, { 'name': _0x16ea21(0x161), 'icon': _0x16ea21(0x255), 'treeId': _0x16ea21(0x1b3) }, { 'name': _0x16ea21(0x258), 'icon': _0x16ea21(0x255), 'treeId': _0x16ea21(0x1f9) }, { 'name': _0x16ea21(0x20a), 'icon': _0x16ea21(0x1bc) }, { 'name': _0x16ea21(0x1cc), 'icon': _0x16ea21(0x1bc) }, { 'name': _0x16ea21(0x172), 'icon': 'fa-solid\x20fa-folder' }, { 'name': _0x16ea21(0x15d), 'icon': _0x16ea21(0x1e3) }, { 'name': _0x16ea21(0x207), 'icon': _0x16ea21(0x18b) }]; _0x700206[_0x16ea21(0x210)](_0x219054 => { const _0x30b6c3 = _0x16ea21, _0x371fa6 = document['createElement']('div'); _0x371fa6['className'] = _0x30b6c3(0x25c), _0x371fa6['innerHTML'] = _0x30b6c3(0x257) + _0x219054['icon'] + '\x22></i>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22folder-item-name\x22>' + _0x219054[_0x30b6c3(0x2a7)] + _0x30b6c3(0x2d0), _0x219054[_0x30b6c3(0x293)] && _0x371fa6['addEventListener'](_0x30b6c3(0x142), () => { navigateToFolder(_0x219054['treeId'], !![]); }), _0x1e6675['appendChild'](_0x371fa6); }), _0x511390 && pushHistory({ 'type': _0x16ea21(0x275), 'treeId': 'root', 'path': folderMap[_0x16ea21(0x22c)][_0x16ea21(0x298)] }), updateNavigationButtons(); } function selectProject(_0x440bca, _0x1c9450, _0x46af0d = !![]) { const _0x2862cc = a0_0x1ec203, _0x442f37 = projectsData[_0x440bca]?.[_0x1c9450]; if (!_0x442f37) return; selectedProject = { 'treeId': _0x440bca, 'index': _0x1c9450 }, document['getElementById'](_0x2862cc(0x250))['style'][_0x2862cc(0x163)] = _0x2862cc(0x243), document[_0x2862cc(0x216)](_0x2862cc(0x151))[_0x2862cc(0x14e)][_0x2862cc(0x163)] = 'block', document[_0x2862cc(0x294)](_0x2862cc(0x229))[_0x2862cc(0x210)](_0x2ffa02 => { const _0x20374a = _0x2862cc; _0x2ffa02[_0x20374a(0x271)][_0x20374a(0x1b9)](_0x20374a(0x21b)); }), document[_0x2862cc(0x294)]('.tree-folder-row')[_0x2862cc(0x210)](_0x3fcf3a => { const _0x29176d = _0x2862cc; _0x3fcf3a[_0x29176d(0x271)]['remove']('active'); }); const _0x28d318 = document[_0x2862cc(0x1c7)](_0x2862cc(0x173) + _0x440bca + _0x2862cc(0x14a) + _0x1c9450 + '\x22]'); if (_0x28d318) _0x28d318[_0x2862cc(0x271)][_0x2862cc(0x1a8)]('active'); const _0x47be91 = folderMap[_0x440bca]['path'] + '\x5c' + _0x442f37['fileName']; setAddress(_0x47be91), document[_0x2862cc(0x216)]('selectedPath')[_0x2862cc(0x12d)] = _0x2862cc(0x24c) + _0x442f37['folder'] + '\x20/\x20' + _0x442f37[_0x2862cc(0x285)], document['getElementById']('projectPreview')[_0x2862cc(0x11c)] = _0x2862cc(0x1f0) + _0x442f37[_0x2862cc(0x1dc)] + '\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20alt=\x22' + _0x442f37[_0x2862cc(0x2ba)] + _0x2862cc(0x29e) + _0x442f37[_0x2862cc(0x18e)] + '&quot;></i>' + _0x442f37[_0x2862cc(0x2a5)] + _0x2862cc(0x1ad), document[_0x2862cc(0x216)](_0x2862cc(0x1cd))[_0x2862cc(0x12d)] = _0x442f37['title'], document['getElementById']('projectDescription')[_0x2862cc(0x12d)] = _0x442f37[_0x2862cc(0x287)]; const _0x1439bd = document[_0x2862cc(0x216)]('projectTags'); _0x1439bd['innerHTML'] = '', _0x442f37['tech'][_0x2862cc(0x210)](_0x2162ab => { const _0x1ecd58 = _0x2862cc, _0x15f00b = document[_0x1ecd58(0x2aa)](_0x1ecd58(0x240)); _0x15f00b['className'] = _0x1ecd58(0x145), _0x15f00b[_0x1ecd58(0x11c)] = _0x1ecd58(0x1de) + _0x2162ab, _0x1439bd[_0x1ecd58(0x12b)](_0x15f00b); }), _0x46af0d && pushHistory({ 'type': _0x2862cc(0x2c5), 'treeId': _0x440bca, 'index': _0x1c9450, 'path': _0x47be91 }), updateNavigationButtons(); } function goBack() { if (historyPointer <= 0x0) return; historyPointer--; const _0x27e14a = historyStack[historyPointer]; applyLocation(_0x27e14a, ![]); } function goForward() { if (historyPointer >= historyStack['length'] - 0x1) return; historyPointer++; const _0x4b6cb3 = historyStack[historyPointer]; applyLocation(_0x4b6cb3, ![]); } function pushHistory(_0x10c604) { const _0x27b6b6 = a0_0x1ec203; historyStack = historyStack[_0x27b6b6(0x183)](0x0, historyPointer + 0x1), historyStack[_0x27b6b6(0x144)](_0x10c604), historyPointer = historyStack['length'] - 0x1; } function applyLocation(_0x4aeb50, _0x917a3e = !![]) { const _0x8a519 = a0_0x1ec203; if (!_0x4aeb50) return; _0x4aeb50[_0x8a519(0x1aa)] === _0x8a519(0x275) && (_0x4aeb50[_0x8a519(0x293)] === _0x8a519(0x22c) ? showRootFolderContents(![]) : showFolderContents(_0x4aeb50[_0x8a519(0x293)], ![])), _0x4aeb50[_0x8a519(0x1aa)] === _0x8a519(0x2c5) && selectProject(_0x4aeb50[_0x8a519(0x293)], _0x4aeb50[_0x8a519(0x13a)], ![]), _0x917a3e && pushHistory(_0x4aeb50), updateNavigationButtons(); } function navigateToFolder(_0x405311, _0x14889d = !![]) { const _0x50ebe8 = a0_0x1ec203, _0x2746d7 = { 'type': _0x50ebe8(0x275), 'treeId': _0x405311, 'path': _0x405311 === 'root' ? folderMap[_0x50ebe8(0x22c)][_0x50ebe8(0x298)] : folderMap[_0x405311][_0x50ebe8(0x298)] }; applyLocation(_0x2746d7, _0x14889d); } function navigateToFile(_0x2b24fa, _0x507655, _0x48d30b = !![]) { const _0xc549a3 = a0_0x1ec203, _0x491f1a = projectsData[_0x2b24fa]?.[_0x507655]; if (!_0x491f1a) return; const _0x34c3f9 = { 'type': _0xc549a3(0x2c5), 'treeId': _0x2b24fa, 'index': _0x507655, 'path': folderMap[_0x2b24fa][_0xc549a3(0x298)] + '\x5c' + _0x491f1a[_0xc549a3(0x285)] }; applyLocation(_0x34c3f9, _0x48d30b); } function updateNavigationButtons() { const _0x36d40f = a0_0x1ec203, _0x3473f6 = document[_0x36d40f(0x1c7)]('.toolbar-btn[title=\x27Back\x27]'), _0xa3f330 = document[_0x36d40f(0x1c7)](_0x36d40f(0x14c)); _0x3473f6 && (_0x3473f6[_0x36d40f(0x2b0)] = historyPointer <= 0x0, _0x3473f6[_0x36d40f(0x14e)][_0x36d40f(0x24f)] = historyPointer <= 0x0 ? _0x36d40f(0x224) : '1'), _0xa3f330 && (_0xa3f330[_0x36d40f(0x2b0)] = historyPointer >= historyStack[_0x36d40f(0x193)] - 0x1, _0xa3f330[_0x36d40f(0x14e)][_0x36d40f(0x24f)] = historyPointer >= historyStack[_0x36d40f(0x193)] - 0x1 ? _0x36d40f(0x224) : '1'); } function refreshCurrentLocation() { const _0xb78011 = historyStack[historyPointer]; if (!_0xb78011) { navigateToFolder('root', !![]); return; } applyLocation(_0xb78011, ![]); } function switchTab(_0x5d01c2, _0x5546a2) { const _0xaecc7d = a0_0x1ec203; document[_0xaecc7d(0x216)](_0xaecc7d(0x268))[_0xaecc7d(0x14e)]['display'] = _0x5d01c2 === _0xaecc7d(0x268) ? _0xaecc7d(0x196) : _0xaecc7d(0x243), document[_0xaecc7d(0x216)](_0xaecc7d(0x127))[_0xaecc7d(0x14e)][_0xaecc7d(0x163)] = _0x5d01c2 === _0xaecc7d(0x127) ? _0xaecc7d(0x196) : _0xaecc7d(0x243), document['getElementById']('infrastructure-stack')[_0xaecc7d(0x14e)]['display'] = _0x5d01c2 === _0xaecc7d(0x16e) ? _0xaecc7d(0x196) : _0xaecc7d(0x243), _0x5546a2[_0xaecc7d(0x20b)][_0xaecc7d(0x294)](_0xaecc7d(0x29a))[_0xaecc7d(0x210)](_0x120c24 => { const _0xc47232 = _0xaecc7d; _0x120c24[_0xc47232(0x271)][_0xc47232(0x1b9)](_0xc47232(0x21b)); }), _0x5546a2[_0xaecc7d(0x271)][_0xaecc7d(0x1a8)]('active'); } function setAddress(_0x2e61de) { const _0x27f152 = a0_0x1ec203, _0x579522 = document['getElementById'](_0x27f152(0x131)); if (_0x579522) _0x579522[_0x27f152(0x1a2)] = _0x2e61de; } function handleAddressKey(_0x51a6bf) { const _0x504544 = a0_0x1ec203; if (_0x51a6bf[_0x504544(0x16d)] !== 'Enter') return; _0x51a6bf[_0x504544(0x245)](); const _0x5ba1da = _0x51a6bf[_0x504544(0x184)][_0x504544(0x1a2)][_0x504544(0x1f2)](), _0x3ddf18 = resolvePath(_0x5ba1da); if (!_0x3ddf18) { alert(_0x504544(0x28a) + _0x5ba1da); const _0x573845 = historyStack[historyPointer]; _0x573845?.[_0x504544(0x298)] && setAddress(_0x573845[_0x504544(0x298)]); return; } applyLocation(_0x3ddf18, !![]); } function normalizePath(_0xcd6e3e) { const _0x5cf16d = a0_0x1ec203; return _0xcd6e3e[_0x5cf16d(0x1f2)]()['replace'](/\//g, '\x5c')['replace'](/\\\\+/g, '\x5c')[_0x5cf16d(0x273)](/\\$/, '')[_0x5cf16d(0x187)](); } function resolvePath(_0x478eb4) { const _0x37ffbd = a0_0x1ec203, _0x3aac55 = normalizePath(_0x478eb4); if (_0x3aac55 === _0x37ffbd(0x12f) || _0x3aac55 === _0x37ffbd(0x1b8) || _0x3aac55 === 'c:' || _0x3aac55 === _0x37ffbd(0x277)) return { 'type': _0x37ffbd(0x275), 'treeId': _0x37ffbd(0x22c), 'path': folderMap['root'][_0x37ffbd(0x298)] }; for (const _0x16d8b0 of Object[_0x37ffbd(0x2be)](folderMap)) { if (_0x16d8b0 === _0x37ffbd(0x22c)) continue; const _0x237473 = normalizePath(folderMap[_0x16d8b0]['path']), _0x4ab1ec = normalizePath(folderMap[_0x16d8b0]['label']); if (_0x3aac55 === _0x237473 || _0x3aac55 === 'portfolio\x5c' + _0x4ab1ec) return { 'type': _0x37ffbd(0x275), 'treeId': _0x16d8b0, 'path': folderMap[_0x16d8b0]['path'] }; const _0x350555 = projectsData[_0x16d8b0] || []; for (let _0x195ece = 0x0; _0x195ece < _0x350555[_0x37ffbd(0x193)]; _0x195ece++) { const _0x373cbd = _0x350555[_0x195ece], _0x5021b3 = normalizePath(folderMap[_0x16d8b0][_0x37ffbd(0x298)] + '\x5c' + _0x373cbd[_0x37ffbd(0x285)]), _0x3a8980 = normalizePath('portfolio\x5c' + folderMap[_0x16d8b0][_0x37ffbd(0x230)] + '\x5c' + _0x373cbd[_0x37ffbd(0x285)]); if (_0x3aac55 === _0x5021b3 || _0x3aac55 === _0x3a8980 || _0x3aac55 === normalizePath(_0x373cbd[_0x37ffbd(0x285)])) return { 'type': _0x37ffbd(0x2c5), 'treeId': _0x16d8b0, 'index': _0x195ece, 'path': folderMap[_0x16d8b0][_0x37ffbd(0x298)] + '\x5c' + _0x373cbd[_0x37ffbd(0x285)] }; } } return null; } function a0_0xf9c4() { const _0x3640cd = ['apple', 'targetDot', 'C:\x5cPortfolio\x5cMobile\x20Apps', 'grape', 'portfolio', 'remove', 'Automated\x20testing\x20system\x20for\x20lamp\x20controllers\x20using\x20voltage/current\x20measurement,\x20LCD,\x20RS485\x20communication,\x20and\x20web-based\x20live\x20monitoring.', 'PHP', 'fa-solid\x20fa-folder', 'Web\x20KoniKota\x20Pasuruan', 'mango', 'embeddedTree', 'clientHeight', 'Font\x20Awesome', 'fa-brands\x20fa-windows', 'alt', 'bow_ai_mobile.dart', '.title-bar', 'inactive', 'querySelector', 'Smart\x203d\x20Print\x20Extruder\x20System', 'color', 'isMuted', 'isShuffleEnabled', 'css', 'projectTitle', 'Buang', 'bomb', 'isRepeatEnabled', 'JSON', 'Invalid\x20YouTube\x20Music\x20URL:', '6472395EsaqTP', 'lineCap', 'hearts', 'Hotel\x20Website\x20Prototype', 'No\x20lives', '\x22></i>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22folder-item-name\x22>', 'laute-hotel-website.html', '9247FUIDHB', 'assets/project/extruder.webp', 'image', 'assets/project/koni.webp', '<i\x20class=\x22fa-solid\x20fa-code\x22></i>', 'cursor', 'Retro\x20Desktop\x20Portfolio', 'taskbar-app-btn', 'assets/project/good.webp', 'fa-brands\x20fa-git-alt', 'fa-solid\x20fa-cloud-sun-rain', 'tkinter', 'getMinutes', 'https://music.youtube.com/watch?v=w1SPXfWjy1c', 'floor', 'Authentication', 'false', 'orange', 'pauseVideo', 'Friendship\x20Group\x20Web\x20App', 'moveTo', 'Extruder-System.ino', '\x0a\x20\x20\x20\x20<img\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20src=\x22', 'left', 'trim', '55MJTTYh', 'unMute', 'lineWidth', 'input', 'fillStyle', 'IoT', 'pyTree', 'running', 'getHours', 'playVideo', 'clock', 'flex', 'A\x20modern,\x20sleek,\x20and\x20responsive\x20hotel\x20website\x20prototype\x20with\x20a\x20clean\x20visual\x20hierarchy\x20and\x20practical\x20landing-page\x20structure.', 'contains', 'assetList', 'sliced', '</p>\x0a\x20\x20\x20\x20<button\x20class=\x22game-btn\x22\x20onclick=\x22startFruitGame()\x22>Play\x20Again</button>\x0a', '#ff9f1c', 'startMenu', 'taskbarApps', 'index.html', '408QKGklM', 'clientY', 'assets', 'parentElement', 'Images/hearts.png', 'spawnDelay', 'mousemove', 'pointerDown', 'forEach', 'isYoutubePlaying', 'getDuration', 'YouTube\x20Music\x20player\x20is\x20not\x20ready\x20yet.', '.tree-folder-icon\x20i', 'playing', 'getElementById', 'scribd-unlocker.py', 'HTML', 'fruitLives', 'C:\x5cPortfolio', 'active', '#ffffff', 'C:\x5cPortfolio\x5cIoT\x20Development', 'clearRect', 'log', 'Lamp\x20Controller\x20Testing\x20Module', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<i\x20class=\x22fa-solid\x20fa-music\x22></i>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>', 'addColorStop', '#0a4e94', '0.45', 'C:\x5cPortfolio\x5cPython', 'toggle', 'fa-brands\x20fa-php', 'lives', '.tree-file-row', '5814GLMiSD', 'electronics-toolbox.dart', 'root', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22playlist-item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<i\x20class=\x22fa-solid\x20fa-triangle-exclamation\x22></i>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span>No\x20songs\x20found</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20', 'BDO', 'fa-solid\x20fa-volume-high', 'label', 'mute', 'missed', 'https://music.youtube.com/watch?v=NFeS6UO0o0g', '#ff3b30', '.tree-folder-row', 'src', 'A\x20modern,\x20feature-rich\x20Flutter\x20Personal\x20AI\x20chat\x20application\x20that\x20gives\x20you\x20a\x20beautiful,\x20intuitive\x20interface\x20to\x20converse\x20with\x20a\x20wide\x20range\x20of\x20AI\x20models—all\x20powered\x20by\x20a\x20single\x20OpenRouter\x20API\x20key.', 'Images/banana.png', 'arc', 'DOMContentLoaded', 'stopVideo', 'https://music.youtube.com/watch?v=Y7pJqaUznbA', 'particles', 'lineJoin', 'KoniKota\x20Pasuruan', 'span', 'filter', 'Penetrasi', 'none', 'textAlign', 'preventDefault', 'currentSongIndex', 'ctx', 'playIcon', 'A\x20converter\x20system\x20that\x20translates\x20G-code\x20feedrate\x20into\x20pulse\x20output\x20for\x20controlling\x20a\x203D\x20printer\x20extruder\x20stepper\x20motor.', 'https://music.youtube.com/watch?v=wqi-YpuffC8', 'fillRect', 'portfolio\x20/\x20', '.music-art', 'durationTime', 'opacity', 'folderView', 'Vanilla\x20JS', 'rotate', 'maximized', 'div', 'fa-solid\x20fa-folder-open', 'fa-folder', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<i\x20class=\x22', 'Python', 'Web\x20Development', 'Math\x20UI', 'mousedown', 'folder-item-card', '3552395MydqWE', 'volumeSlider', 'ToolE\x20Mobile\x20Apps', 'PLAYING', 'isArray', 'windows98-portfolio.html', 'slashPoints', 'ESP32\x20Weather\x20Dashboard', 'save', 'fa-solid\x20fa-calculator', 'fa-solid\x20fa-pause', 'tech-stack', 'isMusicLoaded', '2827ZajXfH', 'C:\x5cPortfolio\x5cWeb\x20Development', 'Images/cherries.png', 'Playlist\x20element\x20not\x20found.\x20Make\x20sure\x20you\x20have:\x20<div\x20id=\x27playlist\x27></div>', '#7fd0ff', 'offsetLeft', 'round', 'classList', 'height', 'replace', 'musicList\x20is\x20empty\x20or\x20not\x20defined\x20correctly.', 'folder', 'gameTime', 'c:\x5c', 'fill', 'stopPropagation', '382lUekJg', 'win-games', 'musicArtist', 'currentTime', 'ADS1115', 'C:\x5cPortfolio\x5cEmbedded\x20System', 'beginPath', 'body', 'assets/project/toole.webp', 'min', 'getCurrentTime', 'fileName', 'Egosentris', 'description', '18951492AczNpT', 'carrot', 'Path\x20not\x20found:\x0a', 'isFinite', 'rotationSpeed', 'Images/watermelon.png', 'true', 'resize', 'PlayerState', 'restore', 'width', 'treeId', 'querySelectorAll', 'Windows\x2098\x20Portfolio\x20OS', 'pointercancel', 'Laute\x20Hotel\x20Website', 'path', 'clientWidth', '.tab-btn', 'Embedded\x20System', 'assets/project/pythonAPP.webp', 'button', '\x22\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20class=\x22project-preview-img\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20onerror=\x22this.style.display=\x27none\x27;\x20this.parentElement.innerHTML=\x27<div><i\x20class=&quot;', 'CSS', 'complete', 'repeatIcon', 'IoT\x20Development', '.window', 'hypot', 'photoLabel', 'Player', 'name', 'youtubePlayer', 'A\x20personal\x20portfolio\x20interface\x20designed\x20like\x20a\x20Windows\x2098\x20desktop\x20with\x20taskbar,\x20draggable\x20windows,\x20project\x20explorer,\x20and\x20retro\x20UI\x20interactions.', 'createElement', 'gameStatus', 'score', 'RS485\x20Lamp\x20Controller\x20Diagnostic\x20Software', 'canvas', 'fruitNames', 'disabled', 'size', 'getPlayerState', 'ENDED', 'max', 'loadVideoById', 'assets/project/toole-app.webp', 'move', 'fruitGameCanvas', '#ffcc00', 'title', 'innerHeight', 'pointerup', 'fa-folder-open', 'keys', 'getContext', 'A\x20web-based\x20electronics\x20toolbox\x20containing\x20scientific\x20calculator,\x20Ohm\x27s\x20law,\x20resistor\x20decoder,\x20voltage\x20divider,\x20PID\x20calculator,\x20and\x20other\x20engineering\x20tools.', 'async', 'className', 'JavaScript', 'assets/project/friends-web.webp', 'file', 'selectedPath', 'lastTime', 'ESP32\x20Soil\x20Moisture\x20Monitoring', 'rgba(255,\x20255,\x20255,\x20', 'assets/project/lawn.webp', 'AI\x20Agent', 'lamp-controller-diagnostic.py', 'gameArea', 'data', 'FreeRTOS', '</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20', 'lamp-controller-tester.cpp', 'pointermove', 'DM542', 'cherries', 'isYoutubeReady', 'offsetWidth', 'Zaman', '36080gdyyHM', 'Alkateri', 'Stepper\x20Motor', 'minimized', 'heart', '</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20', 'now', '8PbVoTN', 'innerHTML', 'ScribdUnlocker', 'fruits', 'dataset', 'Images/orange.png', 'fruit', 'shuffleIcon', 'fa-solid\x20fa-play', 'WiFi', 'stroke', 'Playing', 'software-stack', 'Invalid\x20YouTube\x20Music\x20video\x20ID.', 'fruitScore', 'toole-web-app.html', 'appendChild', 'strokeStyle', 'textContent', 'random', 'c:\x5cportfolio', 'artist', 'addressInput', 'assets/project/bowai.webp', 'images', 'YouTube\x20Music\x20player\x20ready:', 'globalAlpha', 'assets/project/bmkg.webp', 'seekTo', '16px\x20VT323', 'offsetTop', 'index', 'watermelon', 'banana', 'OpenRouter', 'fruitGameOverlay', 'zIndex', '.desktop-icon', 'Images/grape.png', 'click', 'Invalid\x20YouTube\x20Music\x20URL\x20or\x20video\x20ID:', 'push', 'tag', 'error', 'API', 'IoT-Based\x20ESP32\x20BMKG\x20Weather\x20Tracker', 'gravity', '\x22][data-index=\x22', '.music-btn', '.toolbar-btn[title=\x27Forward\x27]', 'WebServer', 'style', 'progressTimer', 'http', 'projectDetailView', '.playlist-item', 'Dart', 'gameMessage', 'MySQL', 'selected', 'A\x20Flutter-based\x20electronics\x20toolbox\x20containing\x20scientific\x20calculator,\x20Ohm\x27s\x20law,\x20resistor\x20decoder,\x20voltage\x20divider,\x20PID\x20calculator,\x20and\x20other\x20engineering\x20tools.', 'volumeIcon', 'cueVideoById', 'rotation', 'Game\x20Over!\x20Final\x20score:\x20', 'youtubeId', '.gitignore', 'Controller\x20Tester\x20UI', 'youtubeMusicPlayer', 'musicProgress', 'Mobile\x20Apps', 'friendship-group-web.php', 'display', 'This\x20song\x20cannot\x20be\x20embedded.', 'fa-solid\x20fa-square-root-variable', 'Esok', '\x22></i></span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22tree-label\x22>', 'setVolume', 'ScribdUnlocker\x20Software', 'RS485', 'gameScore', 'onYouTubeIframeAPIReady', 'key', 'infrastructure-stack', 'WebSocket', 'closest', 'tomato', 'script', '.tree-file-row[data-tree=\x22', '#ff0000', 'fa-solid\x20fa-volume-xmark', 'padStart', '00:00', 'img', 'C++', 'Flutter', 'life', 'warn', 'startButton', 'ACS712', 'top', 'fillText', '#000000', 'fa-solid\x20fa-seedling', 'slice', 'target', '220', 'Custom\x20desktop\x20python\x20app\x20to\x20fetch\x20data\x20from\x20ESP32\x20via\x20RS485\x20USB\x20to\x20TTL\x20that\x20build\x20using\x20PySide6\x20for\x20the\x20GUI.', 'toLowerCase', 'fa-solid\x20fa-gears', 'Local\x20Storage', 'animationId', 'fa-brands\x20fa-html5', 'YouTube\x20Music\x20player\x20error.', 'tree', 'icon', 'webTree', 'lastSpawn', 'open', '[data-folder=\x22', 'length', 'grid', 'shift', 'block', 'naturalWidth', '488300rWObxy', '<i\x20class=\x22fa-solid\x20fa-window-maximize\x22></i>\x20', 'https://music.youtube.com/watch?v=N-DtkQYgyQA', 'KoniKota\x20Pasuruan.html', 'Two-ESP32\x20monitoring\x20system\x20where\x20one\x20board\x20reads\x20capacitive\x20soil\x20moisture\x20data\x20and\x20the\x20second\x20board\x20serves\x20a\x20web\x20dashboard.', 'soil-moisture-monitor.ino', 'font', 'setTransform', 'addEventListener', 'translate', 'value', 'ESP32', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22tree-caret\x22></span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22tree-icon\x20tree-file-icon\x22><i\x20class=\x22', '#c1121f', 'iotTree', 'A\x20PHP\x20and\x20SQL\x20web\x20app\x20for\x20a\x20private\x20group\x20with\x20member\x20registration,\x20photo\x20gallery,\x20voting\x20system,\x20trip\x20agenda\x20submission,\x20and\x20admin\x20moderation.', 'add', 'An\x20ESP32-based\x20weather\x20tracker\x20that\x20fetches\x20environmental\x20data\x20from\x20an\x20API\x20and\x20displays\x20location,\x20temperature,\x20and\x20humidity\x20through\x20a\x20web\x20interface.', 'type', 'esp32-bmkg-weather.ino', 'Lebih\x20Dari', '</div>\x27;\x22\x0a\x20\x20\x20\x20>\x0a', 'Custom\x20Python\x20software\x20to\x20unlock\x20the\x20contain\x20of\x20a\x20Scribd\x20document\x20without\x20downloading\x20it.\x20This\x20tool\x20is\x20built\x20with\x20Python\x20using\x20tkinter\x20for\x20the\x20GUI.', '.taskbar-app-btn', 'drawImage', 'Gallery\x20+\x20Vote\x20+\x20Trip\x20App', 'clientX', 'mobileTree']; a0_0xf9c4 = function () { return _0x3640cd; }; return a0_0xf9c4(); } function toggleStartMenu(_0x364b0b) { const _0x513c94 = a0_0x1ec203; _0x364b0b['stopPropagation'](); const _0x12bf8b = document[_0x513c94(0x216)](_0x513c94(0x205)), _0x176d06 = document[_0x513c94(0x216)](_0x513c94(0x17d)), _0xbbd8dc = _0x12bf8b['style'][_0x513c94(0x163)] === 'block'; _0x12bf8b['style']['display'] = _0xbbd8dc ? _0x513c94(0x243) : _0x513c94(0x196), _0x176d06[_0x513c94(0x271)][_0x513c94(0x226)]('active', !_0xbbd8dc); } function closeStartMenu() { const _0x449ee3 = a0_0x1ec203; document[_0x449ee3(0x216)](_0x449ee3(0x205))[_0x449ee3(0x14e)][_0x449ee3(0x163)] = 'none', document[_0x449ee3(0x216)]('startButton')['classList']['remove'](_0x449ee3(0x21b)); } function openWindowFromMenu(_0x521314) { closeStartMenu(), openWindow(_0x521314); } function selectDesktopIcon(_0x193e10, _0x23074b) { const _0xf8315a = a0_0x1ec203; _0x193e10[_0xf8315a(0x279)](), document[_0xf8315a(0x294)]('.desktop-icon')[_0xf8315a(0x210)](_0x2324cf => { const _0x4e8338 = _0xf8315a; _0x2324cf[_0x4e8338(0x271)][_0x4e8338(0x1b9)](_0x4e8338(0x156)); }), _0x23074b[_0xf8315a(0x271)][_0xf8315a(0x1a8)](_0xf8315a(0x156)); } function unselectDesktopIcons() { const _0x18b6b7 = a0_0x1ec203; document[_0x18b6b7(0x294)](_0x18b6b7(0x140))[_0x18b6b7(0x210)](_0x2c6842 => { const _0x4bc66b = _0x18b6b7; _0x2c6842[_0x4bc66b(0x271)][_0x4bc66b(0x1b9)]('selected'); }); } function openWindow(_0x5cef75) { const _0x15475b = a0_0x1ec203, _0x43ac34 = document[_0x15475b(0x216)](_0x5cef75); if (!_0x43ac34) return; _0x43ac34[_0x15475b(0x14e)]['display'] = _0x15475b(0x196), _0x43ac34['dataset'][_0x15475b(0x2db)] = 'false', bringToFront(_0x43ac34), updateTaskbar(), _0x5cef75 === _0x15475b(0x27b) && setTimeout(() => { resizeFruitCanvas(), drawFruitGameIdle(); }, 0x32); } function closeWindow(_0x3cf1a9) { const _0x215e41 = a0_0x1ec203, _0x17fb39 = document['getElementById'](_0x3cf1a9); if (!_0x17fb39) return; _0x3cf1a9 === 'win-music' && stopSong(), _0x17fb39[_0x215e41(0x14e)][_0x215e41(0x163)] = _0x215e41(0x243), _0x17fb39[_0x215e41(0x11f)][_0x215e41(0x2db)] = _0x215e41(0x1ea), updateTaskbar(); } function minimizeWindow(_0x514dc3) { const _0x75d807 = a0_0x1ec203, _0x81fa5d = document['getElementById'](_0x514dc3); if (!_0x81fa5d) return; _0x81fa5d['style'][_0x75d807(0x163)] = _0x75d807(0x243), _0x81fa5d[_0x75d807(0x11f)][_0x75d807(0x2db)] = _0x75d807(0x28e), updateTaskbar(); } function toggleMaximize(_0x43db0e) { const _0x57d033 = a0_0x1ec203, _0x8feb4b = document[_0x57d033(0x216)](_0x43db0e); if (!_0x8feb4b) return; if (!_0x8feb4b['classList']['contains'](_0x57d033(0x253))) windowState[_0x43db0e] = { 'top': _0x8feb4b[_0x57d033(0x14e)][_0x57d033(0x17f)], 'left': _0x8feb4b['style'][_0x57d033(0x1f1)], 'width': _0x8feb4b[_0x57d033(0x14e)][_0x57d033(0x292)], 'height': _0x8feb4b[_0x57d033(0x14e)]['height'] }, _0x8feb4b['classList'][_0x57d033(0x1a8)](_0x57d033(0x253)); else { _0x8feb4b[_0x57d033(0x271)][_0x57d033(0x1b9)](_0x57d033(0x253)); const _0x5673ea = windowState[_0x43db0e]; _0x5673ea && (_0x8feb4b[_0x57d033(0x14e)][_0x57d033(0x17f)] = _0x5673ea[_0x57d033(0x17f)], _0x8feb4b[_0x57d033(0x14e)]['left'] = _0x5673ea[_0x57d033(0x1f1)], _0x8feb4b[_0x57d033(0x14e)]['width'] = _0x5673ea['width'], _0x8feb4b[_0x57d033(0x14e)][_0x57d033(0x272)] = _0x5673ea[_0x57d033(0x272)]); } bringToFront(_0x8feb4b), _0x43db0e === _0x57d033(0x27b) && setTimeout(() => { const _0x2b5d95 = _0x57d033; resizeFruitCanvas(), !fruitGame[_0x2b5d95(0x1fa)] && drawFruitGameIdle(); }, 0x32); } function bringToFront(_0x2ecf2d) { const _0x4bb19e = a0_0x1ec203; highestZ++, _0x2ecf2d[_0x4bb19e(0x14e)][_0x4bb19e(0x13f)] = highestZ, document[_0x4bb19e(0x294)](_0x4bb19e(0x1c5))['forEach'](_0xd0146a => { const _0x20399f = _0x4bb19e; _0xd0146a[_0x20399f(0x271)]['add'](_0x20399f(0x1c6)); }); const _0xe9a243 = _0x2ecf2d['querySelector'](_0x4bb19e(0x1c5)); if (_0xe9a243) _0xe9a243[_0x4bb19e(0x271)][_0x4bb19e(0x1b9)](_0x4bb19e(0x1c6)); updateTaskbarActive(_0x2ecf2d['id']); } function updateTaskbar() { const _0x3e844a = a0_0x1ec203, _0xfab007 = document[_0x3e844a(0x216)](_0x3e844a(0x206)); _0xfab007['innerHTML'] = '', document[_0x3e844a(0x294)](_0x3e844a(0x2a3))['forEach'](_0x3858bc => { const _0x3282a2 = _0x3e844a, _0x561a9b = _0x3858bc['style'][_0x3282a2(0x163)] === _0x3282a2(0x196), _0x233379 = _0x3858bc['dataset'][_0x3282a2(0x2db)] === 'true'; if (!_0x561a9b && !_0x233379) return; const _0x54dbed = document[_0x3282a2(0x2aa)]('button'); _0x54dbed[_0x3282a2(0x2c2)] = _0x3282a2(0x1e1), _0x54dbed[_0x3282a2(0x11f)][_0x3282a2(0x184)] = _0x3858bc['id'], _0x54dbed[_0x3282a2(0x11c)] = _0x3282a2(0x199) + (_0x3858bc['dataset'][_0x3282a2(0x2ba)] || _0x3858bc['id']), _0x561a9b && Number(_0x3858bc[_0x3282a2(0x14e)]['zIndex']) === highestZ && _0x54dbed[_0x3282a2(0x271)]['add'](_0x3282a2(0x21b)), _0x54dbed[_0x3282a2(0x1a0)](_0x3282a2(0x142), () => { const _0x454232 = _0x3282a2; _0x3858bc[_0x454232(0x14e)]['display'] === _0x454232(0x196) && Number(_0x3858bc[_0x454232(0x14e)][_0x454232(0x13f)]) === highestZ ? minimizeWindow(_0x3858bc['id']) : openWindow(_0x3858bc['id']); }), _0xfab007['appendChild'](_0x54dbed); }); } function updateTaskbarActive(_0x4d7a4f) { const _0x5afe42 = a0_0x1ec203; document[_0x5afe42(0x294)](_0x5afe42(0x1af))[_0x5afe42(0x210)](_0x4ab361 => { const _0x340b59 = _0x5afe42; _0x4ab361[_0x340b59(0x271)][_0x340b59(0x226)](_0x340b59(0x21b), _0x4ab361[_0x340b59(0x11f)][_0x340b59(0x184)] === _0x4d7a4f); }); } function initDraggableWindows() { const _0x33b795 = a0_0x1ec203; document[_0x33b795(0x294)]('.window')[_0x33b795(0x210)](_0x20a0ef => { const _0x1a0503 = _0x33b795, _0xdcc355 = _0x20a0ef['querySelector'](_0x1a0503(0x1c5)); let _0x2fa024 = ![], _0x535bcd = 0x0, _0x38459c = 0x0, _0x5ca312 = 0x0, _0x588ace = 0x0; _0x20a0ef['addEventListener'](_0x1a0503(0x25b), () => bringToFront(_0x20a0ef)), _0xdcc355[_0x1a0503(0x1a0)](_0x1a0503(0x25b), _0x34380d => { const _0xc6dd7b = _0x1a0503; if (_0x34380d[_0xc6dd7b(0x184)][_0xc6dd7b(0x170)](_0xc6dd7b(0x29d))) return; if (_0x20a0ef[_0xc6dd7b(0x271)][_0xc6dd7b(0x200)]('maximized')) return; _0x2fa024 = !![], _0x535bcd = _0x34380d[_0xc6dd7b(0x1b2)], _0x38459c = _0x34380d['clientY'], _0x5ca312 = _0x20a0ef[_0xc6dd7b(0x26f)], _0x588ace = _0x20a0ef[_0xc6dd7b(0x139)], document[_0xc6dd7b(0x281)][_0xc6dd7b(0x14e)][_0xc6dd7b(0x1df)] = _0xc6dd7b(0x2b7); }), document[_0x1a0503(0x1a0)](_0x1a0503(0x20e), _0x17feb2 => { const _0x4cf6fe = _0x1a0503; if (!_0x2fa024) return; const _0x3f34af = _0x17feb2['clientX'] - _0x535bcd, _0x28d092 = _0x17feb2[_0x4cf6fe(0x209)] - _0x38459c, _0x4fb02a = Math[_0x4cf6fe(0x2b4)](0x0, Math['min'](window['innerWidth'] - 0x78, _0x5ca312 + _0x3f34af)), _0x24c291 = Math[_0x4cf6fe(0x2b4)](0x0, Math[_0x4cf6fe(0x283)](window[_0x4cf6fe(0x2bb)] - 0x50, _0x588ace + _0x28d092)); _0x20a0ef[_0x4cf6fe(0x14e)][_0x4cf6fe(0x1f1)] = _0x4fb02a + 'px', _0x20a0ef['style'][_0x4cf6fe(0x17f)] = _0x24c291 + 'px'; }), document[_0x1a0503(0x1a0)]('mouseup', () => { const _0x15c00e = _0x1a0503; _0x2fa024 = ![], document[_0x15c00e(0x281)]['style'][_0x15c00e(0x1df)] = ''; }); }); } function updateClock() { const _0x563d44 = a0_0x1ec203, _0x410e3e = new Date(), _0x41dcba = String(_0x410e3e[_0x563d44(0x1fb)]())[_0x563d44(0x176)](0x2, '0'), _0x589928 = String(_0x410e3e[_0x563d44(0x1e6)]())[_0x563d44(0x176)](0x2, '0'); document[_0x563d44(0x216)](_0x563d44(0x1fd))[_0x563d44(0x12d)] = _0x41dcba + ':' + _0x589928; } const musicList = [{ 'title': a0_0x1ec203(0x1ac), 'artist': a0_0x1ec203(0x2d9), 'youtubeId': a0_0x1ec203(0x23c) }, { 'title': a0_0x1ec203(0x2d7), 'artist': 'Alkateri', 'youtubeId': 'https://music.youtube.com/watch?v=wL_PWdaJA1g' }, { 'title': a0_0x1ec203(0x286), 'artist': 'Alkateri', 'youtubeId': a0_0x1ec203(0x24a) }, { 'title': a0_0x1ec203(0x166), 'artist': a0_0x1ec203(0x2d9), 'youtubeId': a0_0x1ec203(0x233) }, { 'title': 'Kontemplasi', 'artist': a0_0x1ec203(0x2d9), 'youtubeId': a0_0x1ec203(0x1e7) }, { 'title': a0_0x1ec203(0x1ce), 'artist': a0_0x1ec203(0x2d9), 'youtubeId': 'https://music.youtube.com/watch?v=y9RolXnhm1Y' }, { 'title': a0_0x1ec203(0x22e), 'artist': 'Alkateri', 'youtubeId': a0_0x1ec203(0x19a) }, { 'title': a0_0x1ec203(0x242), 'artist': a0_0x1ec203(0x2d9), 'youtubeId': 'https://music.youtube.com/watch?v=6pLifu0lzow' }], musicState = { 'currentSongIndex': 0x0, 'isMusicLoaded': ![], 'isShuffleEnabled': ![], 'isRepeatEnabled': ![], 'youtubePlayer': null, 'isYoutubeReady': ![], 'isYoutubePlaying': ![], 'progressTimer': null }; function getYoutubeMusicId(_0x19dcba) { const _0x3df90c = a0_0x1ec203; if (!_0x19dcba) return ''; if (!_0x19dcba['includes'](_0x3df90c(0x150))) return _0x19dcba; try { const _0x347b58 = new URL(_0x19dcba), _0x71db27 = _0x347b58['searchParams']['get']('v'); return _0x71db27 || ''; } catch (_0x59fd64) { return console[_0x3df90c(0x146)](_0x3df90c(0x1d2), _0x19dcba), ''; } } function getSongVideoId(_0x483a56) { const _0x4326b3 = a0_0x1ec203; return getYoutubeMusicId(_0x483a56['youtubeMusicUrl'] || _0x483a56['youtubeUrl'] || _0x483a56[_0x4326b3(0x15c)] || ''); } function loadYouTubeAPI() { const _0xbb1aa7 = a0_0x1ec203; if (window['YT'] && window['YT'][_0xbb1aa7(0x2a6)]) { createYouTubePlayer(); return; } window[_0xbb1aa7(0x16c)] = function () { createYouTubePlayer(); }; const _0x3cf4fa = document[_0xbb1aa7(0x2aa)](_0xbb1aa7(0x172)); _0x3cf4fa[_0xbb1aa7(0x236)] = 'https://www.youtube.com/iframe_api', _0x3cf4fa[_0xbb1aa7(0x2c1)] = !![], document[_0xbb1aa7(0x281)][_0xbb1aa7(0x12b)](_0x3cf4fa); } function createYouTubePlayer() { const _0x499dad = a0_0x1ec203, _0x31d3a6 = document[_0x499dad(0x216)]('youtubeMusicPlayer'); if (!_0x31d3a6) { console[_0x499dad(0x146)]('Missing\x20#youtubeMusicPlayer\x20element.'); return; } if (musicState[_0x499dad(0x2a8)]) return; const _0x50294 = getSongVideoId(musicList[0x0] || {}); musicState[_0x499dad(0x2a8)] = new YT[(_0x499dad(0x2a6))](_0x499dad(0x15f), { 'width': _0x499dad(0x185), 'height': _0x499dad(0x185), 'videoId': _0x50294, 'playerVars': { 'autoplay': 0x0, 'controls': 0x0, 'disablekb': 0x1, 'modestbranding': 0x1, 'rel': 0x0, 'playsinline': 0x1 }, 'events': { 'onReady': onYoutubeReady, 'onStateChange': onYoutubeStateChange, 'onError': onYoutubeError } }); } function onYoutubeReady() { const _0xefc65a = a0_0x1ec203; musicState[_0xefc65a(0x2d5)] = !![], console[_0xefc65a(0x21f)](_0xefc65a(0x134), musicState[_0xefc65a(0x2a8)]); const _0x32d1b3 = document[_0xefc65a(0x216)]('volumeSlider'); _0x32d1b3 && musicState['youtubePlayer'][_0xefc65a(0x168)](Number(_0x32d1b3['value'])), musicList[_0xefc65a(0x193)] > 0x0 && loadSong(0x0, ![]); } function onYoutubeError(_0x51e3e5) { const _0x50ebba = a0_0x1ec203; console[_0x50ebba(0x146)]('YouTube\x20Music\x20player\x20error:', _0x51e3e5[_0x50ebba(0x2ce)]); let _0x2563de = _0x50ebba(0x18c); if (_0x51e3e5[_0x50ebba(0x2ce)] === 0x2) _0x2563de = _0x50ebba(0x128); else { if (_0x51e3e5[_0x50ebba(0x2ce)] === 0x5) _0x2563de = 'This\x20song\x20cannot\x20be\x20played\x20in\x20HTML5\x20player.'; else { if (_0x51e3e5[_0x50ebba(0x2ce)] === 0x64) _0x2563de = 'This\x20song\x20was\x20not\x20found\x20or\x20is\x20private.'; else (_0x51e3e5[_0x50ebba(0x2ce)] === 0x65 || _0x51e3e5[_0x50ebba(0x2ce)] === 0x96) && (_0x2563de = _0x50ebba(0x164)); } } console[_0x50ebba(0x17c)](_0x2563de); } function initMusicPlayer() { const _0x31bad6 = a0_0x1ec203, _0x438931 = document[_0x31bad6(0x216)]('playlist'), _0x4e6e55 = document[_0x31bad6(0x216)](_0x31bad6(0x160)), _0x42c798 = document[_0x31bad6(0x216)](_0x31bad6(0x25e)); if (!_0x438931) { console[_0x31bad6(0x146)](_0x31bad6(0x26d)); return; } if (!Array[_0x31bad6(0x261)](musicList) || musicList[_0x31bad6(0x193)] === 0x0) { _0x438931[_0x31bad6(0x11c)] = _0x31bad6(0x22d), console[_0x31bad6(0x17c)](_0x31bad6(0x274)); return; } _0x438931[_0x31bad6(0x11c)] = '', musicList[_0x31bad6(0x210)]((_0x21e242, _0x33a11f) => { const _0x534a44 = _0x31bad6, _0x2090c1 = document[_0x534a44(0x2aa)](_0x534a44(0x29d)); _0x2090c1[_0x534a44(0x1aa)] = _0x534a44(0x29d), _0x2090c1['className'] = 'playlist-item', _0x2090c1[_0x534a44(0x11f)]['index'] = _0x33a11f, _0x2090c1[_0x534a44(0x11c)] = _0x534a44(0x221) + _0x21e242['title'] + '</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20', _0x2090c1[_0x534a44(0x1a0)](_0x534a44(0x142), () => { loadSong(_0x33a11f, !![]); }), _0x438931[_0x534a44(0x12b)](_0x2090c1); }), _0x4e6e55 && _0x4e6e55[_0x31bad6(0x1a0)]('input', seekMusic), _0x42c798 && _0x42c798['addEventListener'](_0x31bad6(0x1f6), () => { const _0x320f0e = _0x31bad6; if (!musicState[_0x320f0e(0x2a8)] || !musicState[_0x320f0e(0x2d5)]) return; const _0xca95b1 = Number(_0x42c798[_0x320f0e(0x1a2)]), _0x1926ba = document[_0x320f0e(0x216)]('volumeIcon'); musicState[_0x320f0e(0x2a8)][_0x320f0e(0x168)](_0xca95b1), _0xca95b1 === 0x0 ? (musicState[_0x320f0e(0x2a8)][_0x320f0e(0x231)](), _0x1926ba && (_0x1926ba[_0x320f0e(0x2c2)] = _0x320f0e(0x175))) : (musicState['youtubePlayer'][_0x320f0e(0x1f4)](), _0x1926ba && (_0x1926ba[_0x320f0e(0x2c2)] = _0x320f0e(0x22f))); }), loadSong(0x0, ![]); } function a0_0x4eb6(_0x27fcf7, _0x3eb802) { _0x27fcf7 = _0x27fcf7 - 0x11a; const _0xf9c468 = a0_0xf9c4(); let _0x4eb6aa = _0xf9c468[_0x27fcf7]; return _0x4eb6aa; } function loadSong(_0x45a73c, _0xad58c8 = ![]) { const _0x472c1d = a0_0x1ec203, _0x16eaa9 = musicList[_0x45a73c]; if (!_0x16eaa9) return; musicState[_0x472c1d(0x246)] = _0x45a73c, musicState[_0x472c1d(0x269)] = !![]; const _0x2503d4 = document[_0x472c1d(0x216)]('musicTitle'), _0x37463d = document[_0x472c1d(0x216)](_0x472c1d(0x27c)), _0x5760cd = document[_0x472c1d(0x216)](_0x472c1d(0x160)), _0x9f3fb5 = document[_0x472c1d(0x216)]('currentTime'), _0x1e9b43 = document[_0x472c1d(0x216)](_0x472c1d(0x24e)); if (_0x2503d4) _0x2503d4[_0x472c1d(0x12d)] = _0x16eaa9[_0x472c1d(0x2ba)]; if (_0x37463d) _0x37463d[_0x472c1d(0x12d)] = _0x16eaa9[_0x472c1d(0x130)]; if (_0x5760cd) _0x5760cd[_0x472c1d(0x1a2)] = 0x0; if (_0x9f3fb5) _0x9f3fb5['textContent'] = _0x472c1d(0x177); if (_0x1e9b43) _0x1e9b43[_0x472c1d(0x12d)] = '00:00'; document['querySelectorAll'](_0x472c1d(0x152))[_0x472c1d(0x210)](_0x41848b => { const _0x1c58c8 = _0x472c1d; _0x41848b['classList'][_0x1c58c8(0x226)](_0x1c58c8(0x21b), Number(_0x41848b[_0x1c58c8(0x11f)][_0x1c58c8(0x13a)]) === _0x45a73c); }); if (!musicState['youtubePlayer'] || !musicState[_0x472c1d(0x2d5)]) { console[_0x472c1d(0x17c)]('Song\x20selected,\x20but\x20YouTube\x20Music\x20player\x20is\x20not\x20ready\x20yet.'); return; } const _0x509a2d = getSongVideoId(_0x16eaa9); if (!_0x509a2d) { console[_0x472c1d(0x146)](_0x472c1d(0x143), _0x16eaa9); return; } _0xad58c8 ? musicState[_0x472c1d(0x2a8)][_0x472c1d(0x2b5)](_0x509a2d) : musicState[_0x472c1d(0x2a8)][_0x472c1d(0x159)](_0x509a2d); } function playSong() { const _0x499380 = a0_0x1ec203; if (!musicState[_0x499380(0x2a8)] || !musicState[_0x499380(0x2d5)]) { console[_0x499380(0x17c)](_0x499380(0x213)); return; } musicState[_0x499380(0x2a8)]['playVideo'](); } function pauseSong() { const _0x10d24e = a0_0x1ec203; if (!musicState['youtubePlayer'] || !musicState[_0x10d24e(0x2d5)]) return; musicState[_0x10d24e(0x2a8)]['pauseVideo'](); } function togglePlay() { const _0x208dcb = a0_0x1ec203; if (!musicState[_0x208dcb(0x2a8)] || !musicState[_0x208dcb(0x2d5)]) { console[_0x208dcb(0x17c)](_0x208dcb(0x213)); return; } const _0x43b37c = musicState['youtubePlayer'][_0x208dcb(0x2b2)](); _0x43b37c === YT[_0x208dcb(0x290)][_0x208dcb(0x260)] ? musicState[_0x208dcb(0x2a8)][_0x208dcb(0x1ec)]() : musicState[_0x208dcb(0x2a8)][_0x208dcb(0x1fc)](); } function stopSong() { const _0x2919d6 = a0_0x1ec203; if (!musicState[_0x2919d6(0x2a8)] || !musicState[_0x2919d6(0x2d5)]) return; musicState[_0x2919d6(0x2a8)][_0x2919d6(0x23b)](), musicState['isYoutubePlaying'] = ![]; const _0x474a8c = document[_0x2919d6(0x216)](_0x2919d6(0x248)), _0x311de5 = document[_0x2919d6(0x1c7)]('.music-art'); _0x474a8c && (_0x474a8c[_0x2919d6(0x2c2)] = 'fa-solid\x20fa-play'); _0x311de5 && _0x311de5[_0x2919d6(0x271)][_0x2919d6(0x1b9)](_0x2919d6(0x215)); stopYoutubeProgressTimer(); const _0x46e7f6 = document[_0x2919d6(0x216)](_0x2919d6(0x160)), _0x3523f5 = document[_0x2919d6(0x216)](_0x2919d6(0x27d)); if (_0x46e7f6) _0x46e7f6['value'] = 0x0; if (_0x3523f5) _0x3523f5[_0x2919d6(0x12d)] = '00:00'; } function nextSong() { const _0x11fef4 = a0_0x1ec203; if (musicList['length'] === 0x0) return; if (musicState['isShuffleEnabled']) { let _0x24ce51 = Math['floor'](Math[_0x11fef4(0x12e)]() * musicList[_0x11fef4(0x193)]); if (musicList['length'] > 0x1) while (_0x24ce51 === musicState[_0x11fef4(0x246)]) { _0x24ce51 = Math['floor'](Math[_0x11fef4(0x12e)]() * musicList['length']); } musicState[_0x11fef4(0x246)] = _0x24ce51; } else musicState[_0x11fef4(0x246)]++, musicState[_0x11fef4(0x246)] >= musicList[_0x11fef4(0x193)] && (musicState[_0x11fef4(0x246)] = 0x0); loadSong(musicState[_0x11fef4(0x246)], !![]); } function previousSong() { const _0x3910a4 = a0_0x1ec203; if (musicList['length'] === 0x0) return; musicState[_0x3910a4(0x246)]--, musicState[_0x3910a4(0x246)] < 0x0 && (musicState[_0x3910a4(0x246)] = musicList[_0x3910a4(0x193)] - 0x1), loadSong(musicState[_0x3910a4(0x246)], !![]); } function onYoutubeStateChange(_0x4faf5e) { const _0x6dcb9 = a0_0x1ec203, _0x123533 = document['getElementById']('playIcon'), _0x294195 = document[_0x6dcb9(0x1c7)](_0x6dcb9(0x24d)); _0x4faf5e[_0x6dcb9(0x2ce)] === YT['PlayerState'][_0x6dcb9(0x260)] && (musicState['isYoutubePlaying'] = !![], _0x123533 && (_0x123533[_0x6dcb9(0x2c2)] = _0x6dcb9(0x267)), _0x294195 && _0x294195[_0x6dcb9(0x271)][_0x6dcb9(0x1a8)](_0x6dcb9(0x215)), startYoutubeProgressTimer()), _0x4faf5e[_0x6dcb9(0x2ce)] === YT[_0x6dcb9(0x290)]['PAUSED'] && (musicState[_0x6dcb9(0x211)] = ![], _0x123533 && (_0x123533[_0x6dcb9(0x2c2)] = _0x6dcb9(0x123)), _0x294195 && _0x294195['classList'][_0x6dcb9(0x1b9)](_0x6dcb9(0x215)), stopYoutubeProgressTimer()), _0x4faf5e[_0x6dcb9(0x2ce)] === YT[_0x6dcb9(0x290)][_0x6dcb9(0x2b3)] && (musicState['isYoutubePlaying'] = ![], stopYoutubeProgressTimer(), musicState[_0x6dcb9(0x1d0)] ? loadSong(musicState[_0x6dcb9(0x246)], !![]) : nextSong()); } function toggleShuffle() { const _0x46f623 = a0_0x1ec203; musicState[_0x46f623(0x1cb)] = !musicState['isShuffleEnabled']; const _0x3e2a9f = document[_0x46f623(0x216)](_0x46f623(0x122))?.['closest'](_0x46f623(0x14b)); _0x3e2a9f && _0x3e2a9f['classList'][_0x46f623(0x226)](_0x46f623(0x21b), musicState[_0x46f623(0x1cb)]); } function toggleRepeat() { const _0xf73c67 = a0_0x1ec203; musicState[_0xf73c67(0x1d0)] = !musicState[_0xf73c67(0x1d0)]; const _0xdc762b = document['getElementById'](_0xf73c67(0x2a1))?.['closest'](_0xf73c67(0x14b)); _0xdc762b && _0xdc762b[_0xf73c67(0x271)]['toggle']('active', musicState[_0xf73c67(0x1d0)]); } function toggleMute() { const _0x3335d4 = a0_0x1ec203; if (!musicState[_0x3335d4(0x2a8)] || !musicState[_0x3335d4(0x2d5)]) return; const _0x204c7d = document[_0x3335d4(0x216)](_0x3335d4(0x158)); musicState[_0x3335d4(0x2a8)][_0x3335d4(0x1ca)]() ? (musicState[_0x3335d4(0x2a8)]['unMute'](), _0x204c7d && (_0x204c7d[_0x3335d4(0x2c2)] = _0x3335d4(0x22f))) : (musicState[_0x3335d4(0x2a8)][_0x3335d4(0x231)](), _0x204c7d && (_0x204c7d['className'] = 'fa-solid\x20fa-volume-xmark')); } function startYoutubeProgressTimer() { const _0x17240f = a0_0x1ec203; stopYoutubeProgressTimer(), musicState[_0x17240f(0x14f)] = setInterval(() => { const _0x417a27 = _0x17240f; if (!musicState[_0x417a27(0x2a8)] || !musicState[_0x417a27(0x2d5)]) return; const _0x1a35dc = musicState[_0x417a27(0x2a8)][_0x417a27(0x284)](), _0xc500f6 = musicState[_0x417a27(0x2a8)]['getDuration'](); if (!_0xc500f6 || !Number[_0x417a27(0x28b)](_0xc500f6)) return; const _0x3984ed = document[_0x417a27(0x216)](_0x417a27(0x160)), _0x4a16e6 = document[_0x417a27(0x216)](_0x417a27(0x27d)), _0x5d8dd4 = document[_0x417a27(0x216)](_0x417a27(0x24e)); _0x3984ed && (_0x3984ed['value'] = _0x1a35dc / _0xc500f6 * 0x64), _0x4a16e6 && (_0x4a16e6[_0x417a27(0x12d)] = formatMusicTime(_0x1a35dc)), _0x5d8dd4 && (_0x5d8dd4[_0x417a27(0x12d)] = formatMusicTime(_0xc500f6)); }, 0x1f4); } function stopYoutubeProgressTimer() { const _0x464b4a = a0_0x1ec203; musicState[_0x464b4a(0x14f)] && (clearInterval(musicState[_0x464b4a(0x14f)]), musicState[_0x464b4a(0x14f)] = null); } function seekMusic() { const _0x30e71e = a0_0x1ec203; if (!musicState['youtubePlayer'] || !musicState[_0x30e71e(0x2d5)]) return; const _0x374ad7 = document[_0x30e71e(0x216)](_0x30e71e(0x160)), _0x3706ca = musicState[_0x30e71e(0x2a8)][_0x30e71e(0x212)](); if (!_0x374ad7 || !_0x3706ca || !Number[_0x30e71e(0x28b)](_0x3706ca)) return; const _0x3b8046 = Number(_0x374ad7[_0x30e71e(0x1a2)]) / 0x64 * _0x3706ca; musicState[_0x30e71e(0x2a8)][_0x30e71e(0x137)](_0x3b8046, !![]); } function formatMusicTime(_0x244e60) { const _0x103b72 = a0_0x1ec203; if (!Number[_0x103b72(0x28b)](_0x244e60)) return _0x103b72(0x177); const _0x5dc8bb = Math[_0x103b72(0x1e8)](_0x244e60 / 0x3c), _0xc8a639 = Math[_0x103b72(0x1e8)](_0x244e60 % 0x3c); return String(_0x5dc8bb)[_0x103b72(0x176)](0x2, '0') + ':' + String(_0xc8a639)[_0x103b72(0x176)](0x2, '0'); } let targetGameScore = 0x0, targetGameTime = 0x1e, targetGameActive = ![], targetGameTimer = null; function startTargetGame() { const _0x116927 = a0_0x1ec203, _0x54f9f3 = document[_0x116927(0x216)]('gameScore'), _0x55a736 = document['getElementById'](_0x116927(0x276)), _0xbe3ebd = document['getElementById'](_0x116927(0x2ab)), _0x5c1c45 = document[_0x116927(0x216)](_0x116927(0x154)), _0x140e74 = document[_0x116927(0x216)]('targetDot'); targetGameScore = 0x0, targetGameTime = 0x1e, targetGameActive = !![], _0x54f9f3[_0x116927(0x12d)] = targetGameScore, _0x55a736['textContent'] = targetGameTime, _0xbe3ebd[_0x116927(0x12d)] = _0x116927(0x126), _0x5c1c45[_0x116927(0x12d)] = '', _0x140e74[_0x116927(0x14e)]['display'] = _0x116927(0x196), clearInterval(targetGameTimer), moveTarget(), targetGameTimer = setInterval(() => { const _0x28232e = _0x116927; targetGameTime--, _0x55a736[_0x28232e(0x12d)] = targetGameTime, targetGameTime <= 0x0 && endTargetGame(); }, 0x3e8); } function hitTarget(_0x14510f) { const _0x2a0d63 = a0_0x1ec203; _0x14510f[_0x2a0d63(0x279)](); if (!targetGameActive) return; targetGameScore++, document[_0x2a0d63(0x216)](_0x2a0d63(0x16b))[_0x2a0d63(0x12d)] = targetGameScore, moveTarget(); } function moveTarget() { const _0x3b221d = a0_0x1ec203, _0x5b7c89 = document[_0x3b221d(0x216)](_0x3b221d(0x2cd)), _0x4d7c30 = document[_0x3b221d(0x216)](_0x3b221d(0x1b5)); if (!_0x5b7c89 || !_0x4d7c30) return; const _0xed983f = _0x5b7c89['getBoundingClientRect'](), _0x5dd17e = _0x4d7c30[_0x3b221d(0x2d6)] || 0x38, _0x1efbcf = 0xc, _0x12ed2d = Math[_0x3b221d(0x2b4)](_0x1efbcf, _0xed983f[_0x3b221d(0x292)] - _0x5dd17e - _0x1efbcf), _0x2f70c4 = Math[_0x3b221d(0x2b4)](_0x1efbcf, _0xed983f[_0x3b221d(0x272)] - _0x5dd17e - _0x1efbcf), _0x3c6fda = Math[_0x3b221d(0x1e8)](Math[_0x3b221d(0x12e)]() * _0x12ed2d) + _0x1efbcf, _0x5b885a = Math[_0x3b221d(0x1e8)](Math[_0x3b221d(0x12e)]() * _0x2f70c4) + _0x1efbcf; _0x4d7c30[_0x3b221d(0x14e)][_0x3b221d(0x1f1)] = _0x3c6fda + 'px', _0x4d7c30['style'][_0x3b221d(0x17f)] = _0x5b885a + 'px', _0x4d7c30[_0x3b221d(0x14e)]['transform'] = _0x3b221d(0x243); } function endTargetGame() { const _0x382eaf = a0_0x1ec203; targetGameActive = ![], clearInterval(targetGameTimer); const _0x39dae0 = document[_0x382eaf(0x216)](_0x382eaf(0x1b5)), _0x4fa9ee = document[_0x382eaf(0x216)]('gameStatus'), _0x40e3f9 = document[_0x382eaf(0x216)](_0x382eaf(0x154)); _0x39dae0['style']['display'] = _0x382eaf(0x243), _0x4fa9ee['textContent'] = 'Finished', _0x40e3f9['textContent'] = _0x382eaf(0x15b) + targetGameScore; } const fruitGame = { 'canvas': null, 'ctx': null, 'running': ![], 'animationId': null, 'score': 0x0, 'lives': 0x3, 'fruits': [], 'particles': [], 'slashPoints': [], 'lastSpawn': 0x0, 'spawnDelay': 0x352, 'lastTime': 0x0, 'pointerDown': ![], 'images': {}, 'assetList': [{ 'name': a0_0x1ec203(0x1b4), 'src': 'Images/apple.png' }, { 'name': a0_0x1ec203(0x13c), 'src': a0_0x1ec203(0x238) }, { 'name': a0_0x1ec203(0x2d4), 'src': a0_0x1ec203(0x26c) }, { 'name': a0_0x1ec203(0x1b7), 'src': a0_0x1ec203(0x141) }, { 'name': 'mango', 'src': 'Images/mango.png' }, { 'name': a0_0x1ec203(0x1d5), 'src': a0_0x1ec203(0x20c) }, { 'name': a0_0x1ec203(0x1cf), 'src': 'Images/bomb.png' }, { 'name': a0_0x1ec203(0x13b), 'src': a0_0x1ec203(0x28d) }, { 'name': a0_0x1ec203(0x171), 'src': 'Images/tomato.png' }, { 'name': 'carrot', 'src': 'Images/carrot.png' }, { 'name': a0_0x1ec203(0x1eb), 'src': a0_0x1ec203(0x120) }], 'fruitNames': ['apple', a0_0x1ec203(0x13c), 'cherries', a0_0x1ec203(0x1b7), a0_0x1ec203(0x1be), a0_0x1ec203(0x13b), a0_0x1ec203(0x171), a0_0x1ec203(0x289), a0_0x1ec203(0x1eb)] }; function initFruitGame() { const _0x16e8ec = a0_0x1ec203; fruitGame['canvas'] = document['getElementById'](_0x16e8ec(0x2b8)); if (!fruitGame[_0x16e8ec(0x2ae)]) return; fruitGame[_0x16e8ec(0x247)] = fruitGame[_0x16e8ec(0x2ae)][_0x16e8ec(0x2bf)]('2d'), loadFruitAssets(), resizeFruitCanvas(), renderLives(), window[_0x16e8ec(0x1a0)](_0x16e8ec(0x28f), resizeFruitCanvas), fruitGame[_0x16e8ec(0x2ae)][_0x16e8ec(0x1a0)]('pointerdown', handleFruitPointerDown), fruitGame[_0x16e8ec(0x2ae)][_0x16e8ec(0x1a0)](_0x16e8ec(0x2d2), handleFruitPointerMove), fruitGame[_0x16e8ec(0x2ae)]['addEventListener'](_0x16e8ec(0x2bc), handleFruitPointerUp), fruitGame[_0x16e8ec(0x2ae)][_0x16e8ec(0x1a0)](_0x16e8ec(0x296), handleFruitPointerUp), drawFruitGameIdle(); } function loadFruitAssets() { const _0x441019 = a0_0x1ec203; fruitGame[_0x441019(0x201)]['forEach'](_0x5e8d89 => { const _0x49094b = _0x441019, _0x4d2d90 = new Image(); _0x4d2d90[_0x49094b(0x236)] = _0x5e8d89[_0x49094b(0x236)], fruitGame[_0x49094b(0x133)][_0x5e8d89[_0x49094b(0x2a7)]] = _0x4d2d90; }); } function resizeFruitCanvas() { const _0x591bc3 = a0_0x1ec203; if (!fruitGame[_0x591bc3(0x2ae)]) return; const _0xdba551 = fruitGame[_0x591bc3(0x2ae)][_0x591bc3(0x20b)], _0x4038e3 = _0xdba551['getBoundingClientRect'](), _0x3d8b44 = window['devicePixelRatio'] || 0x1; fruitGame[_0x591bc3(0x2ae)][_0x591bc3(0x292)] = Math[_0x591bc3(0x1e8)](_0x4038e3['width'] * _0x3d8b44), fruitGame[_0x591bc3(0x2ae)][_0x591bc3(0x272)] = Math[_0x591bc3(0x1e8)](_0x4038e3['height'] * _0x3d8b44), fruitGame['canvas']['style'][_0x591bc3(0x292)] = _0x4038e3[_0x591bc3(0x292)] + 'px', fruitGame[_0x591bc3(0x2ae)][_0x591bc3(0x14e)][_0x591bc3(0x272)] = _0x4038e3['height'] + 'px', fruitGame[_0x591bc3(0x247)][_0x591bc3(0x19f)](_0x3d8b44, 0x0, 0x0, _0x3d8b44, 0x0, 0x0), !fruitGame[_0x591bc3(0x1fa)] && drawFruitGameIdle(); } function startFruitGame() { const _0x11dca4 = a0_0x1ec203; if (!fruitGame[_0x11dca4(0x2ae)]) initFruitGame(); resizeFruitCanvas(), fruitGame['running'] = !![], fruitGame[_0x11dca4(0x2ac)] = 0x0, fruitGame['lives'] = 0x3, fruitGame[_0x11dca4(0x11e)] = [], fruitGame['particles'] = [], fruitGame['slashPoints'] = [], fruitGame[_0x11dca4(0x190)] = performance[_0x11dca4(0x11a)]() - fruitGame[_0x11dca4(0x20d)], fruitGame['lastTime'] = performance['now'](), document['getElementById'](_0x11dca4(0x129))[_0x11dca4(0x12d)] = fruitGame[_0x11dca4(0x2ac)]; const _0x2a1576 = document[_0x11dca4(0x216)]('fruitGameOverlay'); _0x2a1576[_0x11dca4(0x14e)][_0x11dca4(0x163)] = _0x11dca4(0x243), renderLives(), cancelAnimationFrame(fruitGame[_0x11dca4(0x18a)]), fruitGame[_0x11dca4(0x18a)] = requestAnimationFrame(updateFruitGame); } function resetFruitGame() { const _0x13dfb8 = a0_0x1ec203; fruitGame[_0x13dfb8(0x1fa)] = ![], fruitGame[_0x13dfb8(0x2ac)] = 0x0, fruitGame[_0x13dfb8(0x228)] = 0x3, fruitGame[_0x13dfb8(0x11e)] = [], fruitGame[_0x13dfb8(0x23d)] = [], fruitGame[_0x13dfb8(0x263)] = [], cancelAnimationFrame(fruitGame['animationId']), document[_0x13dfb8(0x216)]('fruitScore')[_0x13dfb8(0x12d)] = fruitGame['score'], document[_0x13dfb8(0x216)](_0x13dfb8(0x13e))[_0x13dfb8(0x14e)][_0x13dfb8(0x163)] = _0x13dfb8(0x1fe), renderLives(), drawFruitGameIdle(); } function updateFruitGame(_0x5ca87e) { const _0x284f42 = a0_0x1ec203; if (!fruitGame[_0x284f42(0x1fa)]) return; const _0x639263 = Math[_0x284f42(0x283)]((_0x5ca87e - fruitGame[_0x284f42(0x2c7)]) / 0x3e8, 0.035); fruitGame[_0x284f42(0x2c7)] = _0x5ca87e, _0x5ca87e - fruitGame['lastSpawn'] > fruitGame[_0x284f42(0x20d)] && (spawnFruitWave(), fruitGame[_0x284f42(0x190)] = _0x5ca87e, fruitGame[_0x284f42(0x20d)] = Math['max'](0x1c2, 0x384 - fruitGame[_0x284f42(0x2ac)] * 0x8)), updateFruitObjects(_0x639263), updateParticles(_0x639263), drawFruitGame(), fruitGame['animationId'] = requestAnimationFrame(updateFruitGame); } function spawnFruitWave() { const _0x4d8336 = a0_0x1ec203, _0x5bbbdb = Math[_0x4d8336(0x12e)]() < 0.35 ? 0x2 : 0x1; for (let _0x4197fb = 0x0; _0x4197fb < _0x5bbbdb; _0x4197fb++) { spawnFruit(); } } function spawnFruit() { const _0x2ee32f = a0_0x1ec203, _0x4c7405 = fruitGame['canvas'][_0x2ee32f(0x299)], _0x5dfb7d = fruitGame[_0x2ee32f(0x2ae)][_0x2ee32f(0x1c0)], _0xd4bf51 = Math[_0x2ee32f(0x12e)]() < 0.22, _0x17a0db = _0xd4bf51 ? 'bomb' : fruitGame[_0x2ee32f(0x2af)][Math[_0x2ee32f(0x1e8)](Math[_0x2ee32f(0x12e)]() * fruitGame['fruitNames'][_0x2ee32f(0x193)])], _0x23ce48 = _0xd4bf51 ? randomBetween(0x3a, 0x4c) : randomBetween(0x3a, 0x52), _0x1ef0d6 = Math[_0x2ee32f(0x12e)]() < 0.5, _0x5e2d5 = randomBetween(0x3c, _0x4c7405 - 0x3c), _0x40152f = _0x5dfb7d + _0x23ce48, _0x28434b = { 'name': _0x17a0db, 'type': _0xd4bf51 ? 'bomb' : _0x2ee32f(0x121), 'image': fruitGame['images'][_0x17a0db], 'x': _0x5e2d5, 'y': _0x40152f, 'size': _0x23ce48, 'vx': randomBetween(-0x5f, 0x5f) + (_0x1ef0d6 ? 0x19 : -0x19), 'vy': randomBetween(-0x30c, -0x262), 'gravity': randomBetween(0x3d4, 0x49c), 'rotation': randomBetween(0x0, Math['PI'] * 0x2), 'rotationSpeed': randomBetween(-0x4, 0x4), 'sliced': ![], 'missed': ![] }; fruitGame[_0x2ee32f(0x11e)][_0x2ee32f(0x144)](_0x28434b); } function updateFruitObjects(_0x3e9d93) { const _0x324306 = a0_0x1ec203, _0xef2373 = fruitGame[_0x324306(0x2ae)][_0x324306(0x1c0)]; fruitGame[_0x324306(0x11e)][_0x324306(0x210)](_0xad3ffb => { const _0x272b6c = _0x324306; _0xad3ffb['x'] += _0xad3ffb['vx'] * _0x3e9d93, _0xad3ffb['y'] += _0xad3ffb['vy'] * _0x3e9d93, _0xad3ffb['vy'] += _0xad3ffb[_0x272b6c(0x149)] * _0x3e9d93, _0xad3ffb[_0x272b6c(0x15a)] += _0xad3ffb[_0x272b6c(0x28c)] * _0x3e9d93, !_0xad3ffb[_0x272b6c(0x202)] && !_0xad3ffb[_0x272b6c(0x232)] && _0xad3ffb['y'] - _0xad3ffb[_0x272b6c(0x2b1)] > _0xef2373 && (_0xad3ffb[_0x272b6c(0x232)] = !![]); }), fruitGame['fruits'] = fruitGame['fruits'][_0x324306(0x241)](_0xe8ff7 => { const _0x4df682 = _0x324306; return !_0xe8ff7[_0x4df682(0x202)] && _0xe8ff7['y'] - _0xe8ff7[_0x4df682(0x2b1)] < _0xef2373 + 0x78; }); } function loseFruitLife() { fruitGame['lives'] = Math['max'](0x0, fruitGame['lives'] - 0x1), renderLives(), fruitGame['lives'] <= 0x0 && endFruitGame(); } function endFruitGame() { const _0x33849a = a0_0x1ec203; fruitGame['running'] = ![], cancelAnimationFrame(fruitGame[_0x33849a(0x18a)]); const _0x22012d = document['getElementById'](_0x33849a(0x13e)); _0x22012d['style'][_0x33849a(0x163)] = _0x33849a(0x1fe), _0x22012d[_0x33849a(0x11c)] = '\x0a\x20\x20\x20\x20<h3>Game\x20Over</h3>\x0a\x20\x20\x20\x20<p>You\x20hit\x20too\x20many\x20bombs.\x20Your\x20score:\x20' + fruitGame['score'] + _0x33849a(0x203); } function drawFruitGameIdle() { const _0x588bfa = a0_0x1ec203; if (!fruitGame[_0x588bfa(0x247)] || !fruitGame['canvas']) return; const _0x44ba48 = fruitGame[_0x588bfa(0x247)], _0x1b77af = fruitGame[_0x588bfa(0x2ae)]['clientWidth'], _0x20fbc3 = fruitGame[_0x588bfa(0x2ae)]['clientHeight']; _0x44ba48[_0x588bfa(0x21e)](0x0, 0x0, _0x1b77af, _0x20fbc3), drawGameBackground(_0x44ba48, _0x1b77af, _0x20fbc3); } function drawFruitGame() { const _0x20d9b6 = a0_0x1ec203, _0x1daa58 = fruitGame[_0x20d9b6(0x247)], _0x34ea26 = fruitGame[_0x20d9b6(0x2ae)][_0x20d9b6(0x299)], _0x1cf4d5 = fruitGame['canvas']['clientHeight']; _0x1daa58['clearRect'](0x0, 0x0, _0x34ea26, _0x1cf4d5), drawGameBackground(_0x1daa58, _0x34ea26, _0x1cf4d5), fruitGame['fruits'][_0x20d9b6(0x210)](_0x3b7a53 => { drawFruit(_0x1daa58, _0x3b7a53); }), drawParticles(_0x1daa58), drawSlashTrail(_0x1daa58); } function drawGameBackground(_0x16256b, _0x9373f6, _0x50d8bc) { const _0x3277d5 = a0_0x1ec203, _0x4f39d5 = _0x16256b['createLinearGradient'](0x0, 0x0, 0x0, _0x50d8bc); _0x4f39d5[_0x3277d5(0x222)](0x0, _0x3277d5(0x26e)), _0x4f39d5[_0x3277d5(0x222)](0x1, _0x3277d5(0x223)), _0x16256b[_0x3277d5(0x1f7)] = _0x4f39d5, _0x16256b[_0x3277d5(0x24b)](0x0, 0x0, _0x9373f6, _0x50d8bc), _0x16256b[_0x3277d5(0x135)] = 0.16, _0x16256b['fillStyle'] = _0x3277d5(0x21c); for (let _0x26fe5b = 0x0; _0x26fe5b < 0x9; _0x26fe5b++) { const _0x3325bd = _0x26fe5b * 0x89 % _0x9373f6, _0x62d86d = _0x26fe5b * 0x53 % _0x50d8bc; _0x16256b[_0x3277d5(0x280)](), _0x16256b['arc'](_0x3325bd, _0x62d86d, 0x2d, 0x0, Math['PI'] * 0x2), _0x16256b[_0x3277d5(0x278)](); } _0x16256b['globalAlpha'] = 0x1; } function drawFruit(_0x2a0e57, _0x354338) { const _0x5a5b26 = a0_0x1ec203; _0x2a0e57['save'](), _0x2a0e57[_0x5a5b26(0x1a1)](_0x354338['x'], _0x354338['y']), _0x2a0e57[_0x5a5b26(0x252)](_0x354338[_0x5a5b26(0x15a)]), _0x354338[_0x5a5b26(0x1dc)] && _0x354338[_0x5a5b26(0x1dc)][_0x5a5b26(0x2a0)] && _0x354338[_0x5a5b26(0x1dc)][_0x5a5b26(0x197)] > 0x0 ? _0x2a0e57[_0x5a5b26(0x1b0)](_0x354338[_0x5a5b26(0x1dc)], -_0x354338['size'] / 0x2, -_0x354338[_0x5a5b26(0x2b1)] / 0x2, _0x354338[_0x5a5b26(0x2b1)], _0x354338[_0x5a5b26(0x2b1)]) : (_0x2a0e57[_0x5a5b26(0x1f7)] = '#ffcc00', _0x2a0e57[_0x5a5b26(0x280)](), _0x2a0e57[_0x5a5b26(0x239)](0x0, 0x0, _0x354338[_0x5a5b26(0x2b1)] / 0x2, 0x0, Math['PI'] * 0x2), _0x2a0e57[_0x5a5b26(0x278)](), _0x2a0e57[_0x5a5b26(0x1f7)] = _0x5a5b26(0x181), _0x2a0e57[_0x5a5b26(0x19e)] = _0x5a5b26(0x138), _0x2a0e57[_0x5a5b26(0x244)] = 'center', _0x2a0e57[_0x5a5b26(0x180)](_0x354338[_0x5a5b26(0x2a7)], 0x0, 0x5)), _0x2a0e57[_0x5a5b26(0x291)](); } function handleFruitPointerDown(_0x2eec7e) { const _0x56d80d = a0_0x1ec203; _0x2eec7e['preventDefault'](); if (!fruitGame[_0x56d80d(0x1fa)]) return; fruitGame[_0x56d80d(0x20f)] = !![], fruitGame[_0x56d80d(0x263)] = []; const _0x4bab72 = getCanvasPointer(_0x2eec7e); fruitGame['slashPoints'][_0x56d80d(0x144)](_0x4bab72); } function handleFruitPointerMove(_0x1127fd) { const _0x443d33 = a0_0x1ec203; _0x1127fd['preventDefault'](); if (!fruitGame[_0x443d33(0x1fa)] || !fruitGame[_0x443d33(0x20f)]) return; const _0x560b97 = getCanvasPointer(_0x1127fd), _0x365303 = fruitGame[_0x443d33(0x263)][fruitGame[_0x443d33(0x263)][_0x443d33(0x193)] - 0x1]; fruitGame['slashPoints']['push'](_0x560b97), fruitGame[_0x443d33(0x263)]['length'] > 0xc && fruitGame[_0x443d33(0x263)][_0x443d33(0x195)](), _0x365303 && checkFruitSlice(_0x365303, _0x560b97); } function handleFruitPointerUp(_0x199fd8) { const _0x4728b8 = a0_0x1ec203; _0x199fd8['preventDefault'](), fruitGame[_0x4728b8(0x20f)] = ![], setTimeout(() => { const _0x14d867 = _0x4728b8; fruitGame[_0x14d867(0x263)] = []; }, 0x5a); } function getCanvasPointer(_0x5ddab9) { const _0x54d28c = a0_0x1ec203, _0x4fdf1c = fruitGame[_0x54d28c(0x2ae)]['getBoundingClientRect'](); return { 'x': _0x5ddab9[_0x54d28c(0x1b2)] - _0x4fdf1c['left'], 'y': _0x5ddab9[_0x54d28c(0x209)] - _0x4fdf1c[_0x54d28c(0x17f)] }; } function checkFruitSlice(_0x54fdcd, _0x3909c5) { const _0x38de02 = a0_0x1ec203; fruitGame[_0x38de02(0x11e)][_0x38de02(0x210)](_0x5a4e6b => { const _0x2c2c05 = _0x38de02; if (_0x5a4e6b[_0x2c2c05(0x202)]) return; const _0xa6cbbe = distancePointToSegment(_0x5a4e6b['x'], _0x5a4e6b['y'], _0x54fdcd['x'], _0x54fdcd['y'], _0x3909c5['x'], _0x3909c5['y']); _0xa6cbbe < _0x5a4e6b[_0x2c2c05(0x2b1)] * 0.42 && sliceFruit(_0x5a4e6b); }); } function sliceFruit(_0xeb8e9a) { const _0x80ec64 = a0_0x1ec203; _0xeb8e9a['sliced'] = !![]; if (_0xeb8e9a[_0x80ec64(0x1aa)] === _0x80ec64(0x1cf)) { loseFruitLife(), createBombParticles(_0xeb8e9a); return; } fruitGame[_0x80ec64(0x2ac)] += 0xa, document[_0x80ec64(0x216)](_0x80ec64(0x129))['textContent'] = fruitGame['score'], createFruitParticles(_0xeb8e9a); } function createBombParticles(_0x1c5f16) { const _0x3d2d23 = a0_0x1ec203; for (let _0x920fdb = 0x0; _0x920fdb < 0x16; _0x920fdb++) { fruitGame[_0x3d2d23(0x23d)][_0x3d2d23(0x144)]({ 'x': _0x1c5f16['x'], 'y': _0x1c5f16['y'], 'vx': randomBetween(-0x140, 0x140), 'vy': randomBetween(-0x140, 0xa0), 'gravity': 0x2ee, 'size': randomBetween(0x5, 0xd), 'life': randomBetween(0.35, 0.9), 'maxLife': 0.9, 'color': Math[_0x3d2d23(0x12e)]() < 0.5 ? _0x3d2d23(0x234) : _0x3d2d23(0x2b9) }); } } function createFruitParticles(_0x9e0008) { const _0x2a4b1d = a0_0x1ec203; for (let _0xdf4ca7 = 0x0; _0xdf4ca7 < 0xc; _0xdf4ca7++) { fruitGame['particles'][_0x2a4b1d(0x144)]({ 'x': _0x9e0008['x'], 'y': _0x9e0008['y'], 'vx': randomBetween(-0xdc, 0xdc), 'vy': randomBetween(-0x104, 0x50), 'gravity': 0x28a, 'size': randomBetween(0x4, 0x9), 'life': randomBetween(0.35, 0.75), 'maxLife': 0.75, 'color': getFruitParticleColor(_0x9e0008[_0x2a4b1d(0x2a7)]) }); } } function updateParticles(_0x1b367c) { const _0x29b4d0 = a0_0x1ec203; fruitGame[_0x29b4d0(0x23d)][_0x29b4d0(0x210)](_0x2fb93e => { const _0x2d98ac = _0x29b4d0; _0x2fb93e['x'] += _0x2fb93e['vx'] * _0x1b367c, _0x2fb93e['y'] += _0x2fb93e['vy'] * _0x1b367c, _0x2fb93e['vy'] += _0x2fb93e[_0x2d98ac(0x149)] * _0x1b367c, _0x2fb93e[_0x2d98ac(0x17b)] -= _0x1b367c; }), fruitGame[_0x29b4d0(0x23d)] = fruitGame['particles'][_0x29b4d0(0x241)](_0x4ed927 => _0x4ed927['life'] > 0x0); } function drawParticles(_0x15758e) { const _0xe0e5d3 = a0_0x1ec203; fruitGame['particles'][_0xe0e5d3(0x210)](_0x173eb7 => { const _0x8173ad = _0xe0e5d3; _0x15758e[_0x8173ad(0x135)] = Math[_0x8173ad(0x2b4)](0x0, _0x173eb7[_0x8173ad(0x17b)] / _0x173eb7['maxLife']), _0x15758e[_0x8173ad(0x1f7)] = _0x173eb7[_0x8173ad(0x1c9)], _0x15758e[_0x8173ad(0x280)](), _0x15758e[_0x8173ad(0x239)](_0x173eb7['x'], _0x173eb7['y'], _0x173eb7[_0x8173ad(0x2b1)], 0x0, Math['PI'] * 0x2), _0x15758e['fill'](), _0x15758e[_0x8173ad(0x135)] = 0x1; }); } function drawSlashTrail(_0x19cf12) { const _0x23ee54 = a0_0x1ec203; if (fruitGame[_0x23ee54(0x263)][_0x23ee54(0x193)] < 0x2) return; _0x19cf12[_0x23ee54(0x265)](), _0x19cf12[_0x23ee54(0x1d4)] = _0x23ee54(0x270), _0x19cf12[_0x23ee54(0x23e)] = _0x23ee54(0x270); for (let _0x295054 = 0x1; _0x295054 < fruitGame[_0x23ee54(0x263)]['length']; _0x295054++) { const _0x18e8e5 = fruitGame['slashPoints'][_0x295054 - 0x1], _0x1c3db2 = fruitGame['slashPoints'][_0x295054], _0x587502 = _0x295054 / fruitGame['slashPoints'][_0x23ee54(0x193)]; _0x19cf12['strokeStyle'] = _0x23ee54(0x2c9) + _0x587502 + ')', _0x19cf12[_0x23ee54(0x1f5)] = 0x8 * _0x587502, _0x19cf12[_0x23ee54(0x280)](), _0x19cf12[_0x23ee54(0x1ee)](_0x18e8e5['x'], _0x18e8e5['y']), _0x19cf12['lineTo'](_0x1c3db2['x'], _0x1c3db2['y']), _0x19cf12[_0x23ee54(0x125)](), _0x19cf12[_0x23ee54(0x12c)] = 'rgba(0,\x20128,\x20255,\x20' + _0x587502 + ')', _0x19cf12[_0x23ee54(0x1f5)] = 0x3 * _0x587502, _0x19cf12[_0x23ee54(0x280)](), _0x19cf12['moveTo'](_0x18e8e5['x'], _0x18e8e5['y']), _0x19cf12['lineTo'](_0x1c3db2['x'], _0x1c3db2['y']), _0x19cf12['stroke'](); } _0x19cf12[_0x23ee54(0x291)](); } function renderLives() { const _0x5677aa = a0_0x1ec203, _0x6f5d61 = document[_0x5677aa(0x216)](_0x5677aa(0x219)); if (!_0x6f5d61) return; _0x6f5d61['innerHTML'] = ''; for (let _0x3edb37 = 0x0; _0x3edb37 < fruitGame[_0x5677aa(0x228)]; _0x3edb37++) { const _0x16e81b = document[_0x5677aa(0x2aa)](_0x5677aa(0x178)); _0x16e81b[_0x5677aa(0x236)] = _0x5677aa(0x20c), _0x16e81b[_0x5677aa(0x1c3)] = _0x5677aa(0x2dc), _0x6f5d61[_0x5677aa(0x12b)](_0x16e81b); } fruitGame[_0x5677aa(0x228)] === 0x0 && (_0x6f5d61['textContent'] = _0x5677aa(0x1d7)); } function distancePointToSegment(_0x2aaa23, _0x5ef453, _0x4ea414, _0x163998, _0x2488d7, _0x4ced52) { const _0x319ab0 = a0_0x1ec203, _0x57dc6c = _0x2488d7 - _0x4ea414, _0x213204 = _0x4ced52 - _0x163998; if (_0x57dc6c === 0x0 && _0x213204 === 0x0) return Math['hypot'](_0x2aaa23 - _0x4ea414, _0x5ef453 - _0x163998); const _0x3f36c9 = Math[_0x319ab0(0x2b4)](0x0, Math[_0x319ab0(0x283)](0x1, ((_0x2aaa23 - _0x4ea414) * _0x57dc6c + (_0x5ef453 - _0x163998) * _0x213204) / (_0x57dc6c * _0x57dc6c + _0x213204 * _0x213204))), _0x5f0b06 = _0x4ea414 + _0x3f36c9 * _0x57dc6c, _0x2dcaa8 = _0x163998 + _0x3f36c9 * _0x213204; return Math[_0x319ab0(0x2a4)](_0x2aaa23 - _0x5f0b06, _0x5ef453 - _0x2dcaa8); } function getFruitParticleColor(_0x4372cf) { const _0x13fffb = a0_0x1ec203, _0x345dfd = { 'apple': _0x13fffb(0x234), 'banana': '#ffd60a', 'cherries': _0x13fffb(0x1a5), 'grape': '#8338ec', 'mango': '#ff9f1c', 'tomato': _0x13fffb(0x1a5), 'carrot': '#ff9f1c', 'orange': _0x13fffb(0x204), 'watermelon': _0x13fffb(0x174) }; return _0x345dfd[_0x4372cf] || _0x13fffb(0x21c); } function randomBetween(_0x497029, _0x26325b) { return Math['random']() * (_0x26325b - _0x497029) + _0x497029; }
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+
+</html>

@@ -1,0 +1,1483 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --desktop: #008080;
+    --dot-grid-color: #004d4d;
+    --win-gray: #c0c0c0;
+    --win-dark: #808080;
+    --win-blue: #000080;
+    --win-black: #000000;
+    --win-white: #ffffff;
+    --win-light: #dfdfdf;
+    --taskbar-height: 42px;
+    --explorer-bg: #ffffff;
+    --explorer-hover: #000080;
+    --explorer-active: #000080;
+    --explorer-text: #000000;
+    --explorer-muted: #808080;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background: var(--desktop);
+    font-family: "VT323", monospace;
+    color: #000;
+    user-select: none;
+    background-image:
+        radial-gradient(circle, var(--dot-grid-color) 1.1px, transparent 1px);
+    background-size: 8px 8px;
+    background-position: 0 0;
+    background-attachment: fixed;
+}
+
+.wallpaper {
+    position: absolute;
+    z-index: -1;
+    /* Move the top-left corner of the h1 to the exact center */
+    top: 45%;
+    left: 50%;
+    /* Shift the h1 back by half its own width and height to truly center it */
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    margin: 0;
+    font-size: 50px;
+    color: var(--win-white);
+}
+
+.desktop {
+    width: 100%;
+    height: calc(100vh - var(--taskbar-height));
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.desktop-icon {
+    width: 92px;
+    text-align: center;
+    color: #fff;
+    cursor: default;
+    font-size: 18px;
+    text-shadow: 1px 1px #000;
+}
+
+.desktop-icon:hover .desktop-label {
+    background: var(--win-blue);
+    outline: 1px dotted #fff;
+}
+
+.desktop-icon-box {
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: var(--win-gray);
+    color: #111;
+    border: 2px solid;
+    border-color: var(--win-light) var(--win-black) var(--win-black) var(--win-light);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.45); */
+    font-size: 25px;
+}
+
+.desktop-label {
+    display: inline-block;
+    padding: 0 3px;
+    line-height: 1.05;
+}
+
+.window {
+    position: absolute;
+    top: 88px;
+    left: 150px;
+    width: 560px;
+    min-width: 300px;
+    min-height: 210px;
+    display: none;
+    background: var(--win-gray);
+    border: 2px solid;
+    border-color: var(--win-light) var(--win-black) var(--win-black) var(--win-light);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.75);
+    z-index: 10;
+}
+
+.window.maximized {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: calc(100vh - var(--taskbar-height)) !important;
+}
+
+.title-bar {
+    height: 28px;
+    padding: 3px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--win-blue);
+    color: #fff;
+    cursor: move;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.title-bar.inactive {
+    background: var(--win-dark);
+}
+
+.title-left {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+}
+
+.title-left img {
+    width: 20px;
+    height: 20px;
+}
+
+.title-left span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.title-controls {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+}
+
+.win-btn,
+.toolbar-btn,
+.tab-btn,
+.start-button,
+.taskbar-app-btn {
+    font-family: "VT323", monospace;
+    background: var(--win-gray);
+    color: #000;
+    border: 2px solid;
+    border-color: var(--win-white) var(--win-black) var(--win-black) var(--win-white);
+    box-shadow: inset 1px 1px 0 var(--win-light);
+    cursor: pointer;
+}
+
+.win-btn {
+    width: 23px;
+    height: 21px;
+    padding: 0;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 16px;
+}
+
+.win-btn:active,
+.toolbar-btn:active,
+.tab-btn.active,
+.start-button:active,
+.start-button.active,
+.taskbar-app-btn.active {
+    border-color: var(--win-black) var(--win-white) var(--win-white) var(--win-black);
+    box-shadow: inset 1px 1px 0 var(--win-black);
+}
+
+.window-body {
+    padding: 8px;
+    height: calc(100% - 28px);
+    /* width: 780px; */
+}
+
+.window-content {
+    height: 100%;
+    min-height: 260px;
+    overflow: auto;
+    padding: 12px;
+    background: #fff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    font-size: 19px;
+    line-height: 1.32;
+    user-select: text;
+}
+
+.window-content-fixed {
+    height: 95%;
+    min-height: 260px;
+    overflow: auto;
+    padding: 12px;
+    background: #fff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    font-size: 19px;
+    line-height: 1.32;
+    user-select: text;
+}
+
+.desktop-icon.selected {
+    background: rgba(0, 0, 128, 0.35);
+    outline: 1px dotted #ffffff;
+}
+
+/* .desktop-icon.selected .desktop-label {
+    background: rgba(0, 0, 128, 0.3);
+    outline: 1px dotted #ffffff;
+} */
+
+.desktop-icon.selected .desktop-icon {
+    filter: brightness(0.85);
+}
+
+/* }
+
+.desktop-icon.selected .desktop-icon-box {
+    border-color: #000080;
+    background-color: #000080;
+    width: 48px;
+    height: 48px;
+    color: #fff;
+} */
+
+.menubar {
+    display: flex;
+    gap: 3px;
+    padding: 0 0 6px;
+    background: var(--win-gray);
+}
+
+.tab-btn {
+    padding: 4px 13px;
+    font-size: 18px;
+}
+
+
+/* about section */
+
+.about-layout-clean {
+    width: 100%;
+}
+
+.about-header {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 14px;
+    align-items: center;
+}
+
+.profile-photo-clean {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+}
+
+.profile-photo-clean {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+}
+
+.profile-photo-clean img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+
+    filter: contrast(1.15) saturate(0.85);
+}
+
+.about-header-info {
+    min-width: 0;
+}
+
+.about-header-info h2 {
+    margin: 0 0 5px;
+    font-size: 30px;
+    line-height: 1;
+    color: #000080;
+}
+
+.about-header-info p {
+    margin: 0 0 7px;
+    font-size: 21px;
+    line-height: 1.15;
+    color: #000000;
+}
+
+.about-header-info span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 19px;
+    color: #333333;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 6px 10px;
+    font-size: 19px;
+}
+
+.label-cell {
+    font-weight: bold;
+    color: #000080;
+}
+
+.win98-divider {
+    height: 2px;
+    margin: 14px 0;
+    background: #808080;
+    border-bottom: 1px solid #ffffff;
+}
+
+.bio {
+    font-size: 19px;
+    line-height: 1.35;
+}
+
+/* project explorer section */
+
+.project-explorer {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background: var(--win-gray);
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+}
+
+.explorer-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px;
+    border-bottom: 2px solid;
+    border-color: var(--win-light) var(--win-black) var(--win-black) var(--win-light);
+}
+
+.toolbar-btn {
+    min-width: 32px;
+    height: 27px;
+    padding: 2px 8px;
+    font-size: 18px;
+}
+
+.resume-body {
+    height: calc(100% - 28px);
+    padding: 8px;
+}
+
+.resume-frame {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+}
+
+.address-bar {
+    flex: 1;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 2px 6px;
+    background: #fff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.address-bar input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: "VT323", monospace;
+    font-size: 18px;
+    color: #000;
+}
+
+.explorer-main {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 310px 1fr;
+}
+
+.explorer-sidebar {
+    overflow: auto;
+    background: #ffffff;
+    color: #000000;
+    border-right: 2px solid var(--win-dark);
+    font-family: "VT323", monospace;
+    user-select: none;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+}
+
+.explorer-header {
+    height: 32px;
+    padding: 5px 8px;
+    font-size: 19px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #000000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--win-gray);
+    border-bottom: 2px solid;
+    border-color: var(--win-light) var(--win-black) var(--win-black) var(--win-light);
+}
+
+.explorer-tree-root {
+    padding: 5px 0 10px;
+    background: #ffffff;
+}
+
+.tree-folder {
+    width: 100%;
+}
+
+.tree-folder-row,
+.tree-file-row {
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 8px;
+    color: #000000;
+    cursor: pointer;
+    font-family: "VT323", monospace;
+    font-size: 18px;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.tree-folder-row:hover,
+.tree-file-row:hover {
+    background: #000080;
+    color: #ffffff;
+}
+
+.tree-file-row.active {
+    background: #000080;
+    color: #ffffff;
+    outline: 1px dotted #ffffff;
+    outline-offset: -2px;
+}
+
+.tree-folder-row.active {
+    background: #000080;
+    color: #ffffff;
+}
+
+.tree-children {
+    display: none;
+}
+
+.tree-folder.open>.tree-children {
+    display: block;
+}
+
+.tree-caret {
+    width: 13px;
+    text-align: center;
+    color: inherit;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.tree-folder.open>.tree-folder-row .tree-caret i {
+    transform: rotate(90deg);
+}
+
+.tree-caret i {
+    transition: transform 120ms linear;
+}
+
+.tree-icon {
+    width: 17px;
+    text-align: center;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+.tree-folder-icon {
+    color: #d6a100;
+}
+
+.tree-file-icon {
+    color: #000080;
+}
+
+.tree-folder-row:hover .tree-folder-icon,
+.tree-folder-row:hover .tree-file-icon,
+.tree-file-row:hover .tree-file-icon,
+.tree-file-row.active .tree-file-icon {
+    color: #ffffff;
+}
+
+.tree-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tree-level-0 {
+    padding-left: 8px;
+}
+
+.tree-level-1 {
+    padding-left: 25px;
+}
+
+.tree-level-2 {
+    padding-left: 43px;
+}
+
+/* exploerer right */
+
+.explorer-right {
+    min-width: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background: #fff;
+}
+
+.file-path-header {
+    height: 34px;
+    padding: 7px 10px;
+    border-bottom: 1px solid #999;
+    background: #eeeeee;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.detail-pane {
+    overflow: auto;
+    padding: 12px;
+}
+
+.project-preview {
+    width: 100%;
+    height: 240px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(45deg, rgba(0, 0, 128, 0.9), rgba(0, 128, 128, 0.9)),
+        repeating-linear-gradient(90deg, transparent 0 12px, rgba(255, 255, 255, 0.18) 12px 13px);
+    color: #fff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    text-align: center;
+    font-size: 24px;
+}
+
+.project-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-preview i {
+    font-size: 46px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.detail-title {
+    margin: 0 0 6px;
+    font-size: 26px;
+}
+
+.detail-description {
+    margin: 0 0 10px;
+    font-size: 19px;
+}
+
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 7px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 7px;
+    color: #fff;
+    background: var(--win-blue);
+    font-size: 16px;
+}
+
+/* folder view */
+.folder-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+    gap: 16px;
+    padding: 8px;
+}
+
+.folder-item-card {
+    min-height: 95px;
+    padding: 8px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    font-family: "VT323", monospace;
+    font-size: 17px;
+    color: #000000;
+    user-select: none;
+}
+
+.folder-item-card:hover,
+.folder-item-card.active {
+    background: #000080;
+    color: #ffffff;
+    outline: 1px dotted #ffffff;
+    outline-offset: -3px;
+}
+
+.folder-item-card i {
+    font-size: 34px;
+    color: #000080;
+}
+
+.folder-item-card:hover i,
+.folder-item-card.active i {
+    color: #ffffff;
+}
+
+.folder-item-name {
+    max-width: 95px;
+    overflow-wrap: anywhere;
+    line-height: 1.05;
+}
+
+.project-detail-view {
+    width: 100%;
+}
+
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+    gap: 9px;
+}
+
+.stack-card {
+    min-height: 82px;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+    background: var(--win-gray);
+    border: 2px solid;
+    border-color: var(--win-light) var(--win-black) var(--win-black) var(--win-light);
+    font-size: 18px;
+}
+
+.stack-card i {
+    font-size: 28px;
+    color: var(--win-blue);
+}
+
+.stack-card img {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+}
+
+.svg-org-note {
+    margin-top: 12px;
+    padding: 7px;
+    background: #ffffcc;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    font-size: 17px;
+}
+
+.contact-list {
+    display: grid;
+    gap: 8px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    height: 55px;
+    padding: 8px;
+    background: var(--win-gray);
+    border: 2px solid;
+    border-color: var(--win-light) var(--win-black) var(--win-black) var(--win-light);
+    text-decoration: none;
+    color: inherit;
+}
+
+.taskbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--taskbar-height);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 3px 6px;
+    background: var(--win-gray);
+    border-top: 2px solid #fff;
+    box-shadow: inset 0 1px 0 #fff;
+}
+
+.taskbar-left {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+}
+
+.start-button {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 11px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.taskbar-divider {
+    width: 2px;
+    height: 25px;
+    background: var(--win-dark);
+    border-right: 1px solid #fff;
+}
+
+.taskbar-apps {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.taskbar-app-btn {
+    height: 30px;
+    min-width: 118px;
+    max-width: 170px;
+    padding: 2px 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 17px;
+    text-align: left;
+}
+
+.system-tray {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 8px;
+    background: var(--win-gray);
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-white) var(--win-white) var(--win-black);
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+.start-menu {
+    position: fixed;
+    left: 2px;
+    bottom: var(--taskbar-height);
+    width: 230px;
+    display: none;
+    background: var(--win-gray);
+    border: 2px solid;
+    border-color: var(--win-white) var(--win-black) var(--win-black) var(--win-white);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, .45);
+    z-index: 999999;
+}
+
+.start-menu-container {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+}
+
+.start-menu-sidebar {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 12px;
+    background: linear-gradient(180deg, #000040, #000080);
+    color: #fff;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.start-menu-sidebar span {
+    display: block;
+    transform: rotate(270deg);
+    white-space: nowrap;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.start-menu-links {
+    padding: 3px;
+}
+
+.start-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 9px;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.start-menu-item:hover {
+    background: var(--win-blue);
+    color: #fff;
+}
+
+.start-menu-item img {
+    height: 20px;
+    width: 20px;
+}
+
+.start-menu-divider {
+    height: 2px;
+    margin: 5px 0;
+    background: var(--win-dark);
+    border-bottom: 1px solid #fff;
+}
+
+/* music player styles */
+
+.music-player {
+    height: 100%;
+    padding: 10px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    font-family: "VT323", monospace;
+    user-select: none;
+}
+
+.music-display {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    gap: 12px;
+    padding: 10px;
+    background: #ffffff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+}
+
+.music-art {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000080;
+    color: #ffffff;
+    border: 2px solid;
+    border-color: var(--win-light) var(--win-black) var(--win-black) var(--win-light);
+    font-size: 42px;
+}
+
+.music-art.playing i {
+    animation: discSpin 2.2s linear infinite;
+}
+
+@keyframes discSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.music-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.music-label {
+    color: #000080;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.music-title {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-artist {
+    margin-top: 6px;
+    font-size: 18px;
+    color: #555555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-progress-wrap {
+    display: grid;
+    grid-template-columns: 45px 1fr 45px;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0;
+    font-size: 18px;
+}
+
+.music-progress-wrap input,
+.volume-row input {
+    width: 100%;
+}
+
+.music-controls {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 10px;
+}
+
+.music-btn {
+    min-width: 42px;
+    height: 34px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: var(--win-white) var(--win-black) var(--win-black) var(--win-white);
+    box-shadow: inset 1px 1px 0 var(--win-light);
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.music-btn:active {
+    border-color: var(--win-black) var(--win-white) var(--win-white) var(--win-black);
+    box-shadow: inset 1px 1px 0 var(--win-black);
+}
+
+.play-btn {
+    min-width: 54px;
+}
+
+.volume-row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.playlist-box {
+    height: calc(100% - 250px);
+    min-height: 145px;
+    background: #ffffff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    overflow: hidden;
+}
+
+.playlist-header {
+    height: 30px;
+    padding: 5px 8px;
+    background: #c0c0c0;
+    border-bottom: 2px solid;
+    border-color: var(--win-light) var(--win-black) var(--win-black) var(--win-light);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.playlist {
+    height: calc(100% - 30px);
+    overflow-y: auto;
+}
+
+.playlist-item {
+    width: 100%;
+    min-height: 30px;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    border: none;
+    font-family: "VT323", monospace;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.playlist-item:hover,
+.playlist-item.active {
+    background: #000080;
+    color: #ffffff;
+}
+
+.playlist-item span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.music-btn.active {
+    background: #000080;
+    color: #ffffff;
+    border-color: var(--win-black) var(--win-white) var(--win-white) var(--win-black);
+    box-shadow: inset 1px 1px 0 var(--win-black);
+}
+
+.youtube-player-box {
+    width: 100%;
+    height: 180px;
+    margin: 10px 0;
+    background: #000000;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    overflow: hidden;
+}
+
+.youtube-player-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* game styles */
+
+.game-window-content {
+    height: 100%;
+    min-height: 420px;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 8px;
+    padding: 8px;
+    background: var(--win-gray);
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    user-select: none;
+}
+
+.game-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px;
+    background: #ffffff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    font-size: 20px;
+}
+
+.game-subtitle {
+    display: block;
+    margin-top: 2px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.game-start-btn {
+    min-width: 92px;
+    padding: 5px 10px;
+    font-family: "VT323", monospace;
+    font-size: 18px;
+    background: var(--win-gray);
+    color: #000000;
+    border: 2px solid;
+    border-color: var(--win-white) var(--win-black) var(--win-black) var(--win-white);
+    box-shadow: inset 1px 1px 0 var(--win-light);
+    cursor: pointer;
+}
+
+.game-start-btn:active {
+    border-color: var(--win-black) var(--win-white) var(--win-white) var(--win-black);
+    box-shadow: inset 1px 1px 0 var(--win-black);
+}
+
+.game-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+}
+
+.game-stat-box {
+    padding: 7px;
+    text-align: center;
+    background: #ffffff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    font-size: 18px;
+}
+
+.game-stat-box span {
+    display: block;
+    color: #333333;
+}
+
+.game-stat-box strong {
+    display: block;
+    margin-top: 2px;
+    font-size: 24px;
+    color: #000080;
+}
+
+.game-area {
+    position: relative;
+    overflow: hidden;
+    min-height: 250px;
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+        #ffffff;
+    background-size: 20px 20px;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    touch-action: manipulation;
+}
+
+.game-message {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-align: center;
+    font-size: 26px;
+    color: #000080;
+    pointer-events: none;
+}
+
+.target-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 56px;
+    height: 56px;
+    display: none;
+    border-radius: 50%;
+    background: #ff3333;
+    border: 4px solid #ffffff;
+    box-shadow:
+        0 0 0 2px #000000,
+        2px 2px 0 rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    touch-action: manipulation;
+}
+
+.target-dot::before {
+    content: "";
+    position: absolute;
+    inset: 13px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #000000;
+}
+
+.target-dot::after {
+    content: "";
+    position: absolute;
+    inset: 21px;
+    border-radius: 50%;
+    background: #ff3333;
+}
+
+@media (max-width: 650px) {
+    #win-games {
+        width: 96vw !important;
+        height: calc(100vh - 70px) !important;
+        left: 2vw !important;
+        top: 12px !important;
+    }
+
+    .game-window-content {
+        min-height: 0;
+    }
+
+    .game-topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 19px;
+    }
+
+    .game-start-btn {
+        width: 100%;
+        min-height: 38px;
+    }
+
+    .game-stats {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+    }
+
+    .game-stat-box {
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    .game-stat-box strong {
+        font-size: 22px;
+    }
+
+    .game-area {
+        min-height: 310px;
+    }
+
+    .target-dot {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+.game-window-body {
+    height: calc(100% - 28px);
+    padding: 8px;
+}
+
+.game-panel {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+}
+
+.game-topbar {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 6px;
+    background: var(--win-gray);
+    border-bottom: 2px solid;
+    border-color: var(--win-light) var(--win-black) var(--win-black) var(--win-light);
+}
+
+.game-stat {
+    min-height: 29px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 9px;
+    background: #ffffff;
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    font-size: 18px;
+}
+
+.game-lives {
+    gap: 3px;
+}
+
+.game-lives img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    image-rendering: auto;
+}
+
+.game-btn {
+    min-height: 29px;
+    padding: 3px 10px;
+    font-family: "VT323", monospace;
+    font-size: 18px;
+    background: var(--win-gray);
+    color: #000;
+    border: 2px solid;
+    border-color: var(--win-white) var(--win-black) var(--win-black) var(--win-white);
+    box-shadow: inset 1px 1px 0 var(--win-light);
+    cursor: pointer;
+}
+
+.game-btn:active {
+    border-color: var(--win-black) var(--win-white) var(--win-white) var(--win-black);
+    box-shadow: inset 1px 1px 0 var(--win-black);
+}
+
+.game-canvas-wrap {
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.28), transparent 42%),
+        linear-gradient(180deg, #79c7ff 0%, #0f5ca8 100%);
+    border: 2px solid;
+    border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    margin: 8px;
+    touch-action: none;
+}
+
+#fruitGameCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: crosshair;
+    touch-action: none;
+}
+
+.game-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.45);
+    font-size: 21px;
+    pointer-events: auto;
+}
+
+.game-overlay h3 {
+    margin: 0;
+    font-size: 38px;
+    text-shadow: 2px 2px #000;
+}
+
+.game-overlay p {
+    margin: 0 0 8px;
+    max-width: 420px;
+    text-shadow: 1px 1px #000;
+}
+
+@media (max-width: 850px) {
+    #win-games {
+        width: 96vw !important;
+        height: calc(100vh - 80px) !important;
+        left: 2vw !important;
+        top: 3vh !important;
+    }
+
+    .game-topbar {
+        gap: 5px;
+    }
+
+    .game-stat,
+    .game-btn {
+        font-size: 16px;
+    }
+
+    .game-canvas-wrap {
+        margin: 6px;
+    }
+
+    .game-overlay h3 {
+        font-size: 32px;
+    }
+}
+
+/* mobile responsive */
+
+@media (max-width: 850px) {
+    .desktop {
+        flex-direction: row;
+        align-content: flex-start;
+        overflow: auto;
+    }
+
+    .window {
+        left: 2vw !important;
+        top: 3vh !important;
+        width: 96vw !important;
+        max-width: 96vw;
+    }
+
+    .window.maximized {
+        width: 100vw !important;
+        height: calc(100vh - var(--taskbar-height)) !important;
+    }
+
+    .explorer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .explorer-sidebar {
+        max-height: 230px;
+        border-right: none;
+        border-bottom: 2px solid var(--win-dark);
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .taskbar-app-btn {
+        min-width: 92px;
+    }
+}
