@@ -21,6 +21,12 @@
     --explorer-muted: #808080;
 }
 
+@font-face {
+    font-family: "VT323";
+    src: url("/assets/font/VT323-Regular.ttf") format("woff2");
+    font-display: swap;
+}
+
 html,
 body {
     width: 100%;
@@ -2544,28 +2550,8 @@ embed {
     }
 }
 
-/* Extra small screen fix */
-/* @media (max-width: 380px) {
-    #win-fruit .game-topbar {
-        align-items: stretch;
+@media (max-width: 700px) {
+    .title-controls .win-btn[title="Maximize"] {
+        display: none;
     }
-
-    #win-fruit .game-stat,
-    #win-fruit .game-btn {
-        font-size: 15px;
-        padding: 3px 6px;
-    }
-
-    #win-fruit .game-btn {
-        flex: 1 1 calc(50% - 5px);
-        text-align: center;
-    }
-
-    #win-fruit .game-stat {
-        flex: 1 1 100%;
-    }
-
-    #win-fruit .game-overlay p {
-        font-size: 16px;
-    }
-} */
+}
