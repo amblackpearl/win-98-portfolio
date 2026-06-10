@@ -1481,3 +1481,1091 @@ body {
         min-width: 92px;
     }
 }
+
+/* =========================================================
+   GLOBAL RESPONSIVE FIX
+   Put this at the VERY BOTTOM of your CSS file
+   ========================================================= */
+
+.window,
+.window * {
+    max-width: 100%;
+}
+
+.window {
+    overflow: hidden;
+}
+
+.window-body {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.window-content,
+.window-content-fixed {
+    min-height: 0;
+    overflow: auto;
+}
+
+/* Prevent images, iframe, canvas, and media from overflowing */
+img,
+iframe,
+canvas,
+video,
+object,
+embed {
+    max-width: 100%;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE: ALL WINDOWS
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body {
+        position: fixed;
+        inset: 0;
+    }
+
+    .wallpaper {
+        width: 90vw;
+        top: 42%;
+        font-size: clamp(30px, 10vw, 48px);
+        line-height: 0.95;
+        word-break: break-word;
+        pointer-events: none;
+    }
+
+    .desktop {
+        width: 100vw;
+        height: calc(100dvh - var(--taskbar-height));
+        max-height: calc(100dvh - var(--taskbar-height));
+        padding: 12px;
+        display: flex;
+        flex-direction: row;
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 14px 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .desktop-icon {
+        width: 78px;
+        font-size: 16px;
+    }
+
+    .desktop-icon-box {
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+    }
+
+    .window {
+        left: 2vw !important;
+        top: 10px !important;
+        width: 96vw !important;
+        max-width: 96vw !important;
+        height: auto !important;
+        max-height: calc(100dvh - var(--taskbar-height) - 18px) !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        display: none;
+        grid-template-rows: auto minmax(0, 1fr);
+        overflow: hidden;
+    }
+
+    .window[style*="display: block"],
+    .window.show {
+        display: grid;
+    }
+
+    .window.maximized {
+        left: 0 !important;
+        top: 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: calc(100dvh - var(--taskbar-height)) !important;
+        max-height: calc(100dvh - var(--taskbar-height)) !important;
+    }
+
+    .title-bar {
+        height: 28px;
+        min-height: 28px;
+        max-height: 28px;
+        font-size: 17px;
+        overflow: hidden;
+    }
+
+    .title-left {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .title-left span {
+        min-width: 0;
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .title-controls {
+        flex-shrink: 0;
+    }
+
+    .win-btn {
+        width: 24px;
+        height: 21px;
+        flex-shrink: 0;
+    }
+
+    .window-body {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: calc(100dvh - var(--taskbar-height) - 46px) !important;
+        padding: 7px;
+        overflow: hidden;
+    }
+
+    .window-content,
+    .window-content-fixed {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        max-height: calc(100dvh - var(--taskbar-height) - 72px);
+        padding: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        font-size: 18px;
+    }
+
+    .menubar {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 5px;
+    }
+
+    .tab-btn {
+        flex-shrink: 0;
+        font-size: 17px;
+        padding: 4px 11px;
+    }
+
+    .taskbar {
+        height: var(--taskbar-height);
+        max-height: var(--taskbar-height);
+        gap: 5px;
+        padding: 3px 4px;
+        overflow: hidden;
+    }
+
+    .taskbar-left {
+        min-width: 0;
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .start-button {
+        height: 31px;
+        padding: 2px 8px;
+        font-size: 17px;
+        flex-shrink: 0;
+    }
+
+    .taskbar-apps {
+        min-width: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+    }
+
+    .taskbar-apps::-webkit-scrollbar {
+        display: none;
+    }
+
+    .taskbar-app-btn {
+        min-width: 82px;
+        max-width: 112px;
+        height: 29px;
+        font-size: 15px;
+        padding: 2px 6px;
+        flex-shrink: 0;
+    }
+
+    .system-tray {
+        height: 29px;
+        padding: 3px 6px;
+        font-size: 15px;
+        flex-shrink: 0;
+    }
+
+    .start-menu {
+        width: min(230px, 94vw);
+        max-height: calc(100dvh - var(--taskbar-height) - 8px);
+        overflow-y: auto;
+    }
+}
+
+/* =========================================================
+   ABOUT WINDOW MOBILE FIX
+   Make About scrollable and prevent content overflow
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    #win-about,
+    #about,
+    .window#win-about {
+        height: min(620px, calc(100dvh - var(--taskbar-height) - 18px)) !important;
+        max-height: calc(100dvh - var(--taskbar-height) - 18px) !important;
+    }
+
+    #win-about .window-body,
+    #about .window-body {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        min-height: 0;
+    }
+
+    #win-about .window-content,
+    #win-about .window-content-fixed,
+    #about .window-content,
+    #about .window-content-fixed {
+        height: 100%;
+        max-height: none;
+        min-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .about-header {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        align-items: start;
+    }
+
+    .profile-photo-clean {
+        width: 105px;
+        height: 105px;
+        margin: 0 auto;
+    }
+
+    .about-header-info {
+        text-align: center;
+    }
+
+    .about-header-info h2 {
+        font-size: 26px;
+        line-height: 1;
+    }
+
+    .about-header-info p {
+        font-size: 19px;
+    }
+
+    .about-header-info span {
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: 17px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 3px;
+        font-size: 18px;
+    }
+
+    .label-cell {
+        margin-top: 7px;
+    }
+
+    .bio {
+        font-size: 18px;
+        line-height: 1.35;
+    }
+}
+
+/* =========================================================
+   RESUME WINDOW MOBILE FIX
+   PDF iframe stays inside window
+   ========================================================= */
+
+@media (max-width: 700px) {
+    #resume {
+        height: calc(100dvh - var(--taskbar-height) - 18px) !important;
+        max-height: calc(100dvh - var(--taskbar-height) - 18px) !important;
+    }
+
+    #resume .window-body,
+    .resume-body {
+        height: auto !important;
+        min-height: 0;
+        max-height: none !important;
+        overflow: hidden;
+    }
+
+    .resume-frame {
+        width: 100%;
+        height: calc(100dvh - var(--taskbar-height) - 62px);
+        max-height: calc(100dvh - var(--taskbar-height) - 62px);
+        display: block;
+    }
+}
+
+/* =========================================================
+   PROJECT WINDOW MOBILE FIX
+   Prevent detail pane from outpacing window height
+   ========================================================= */
+
+@media (max-width: 700px) {
+    #win-projects {
+        width: 96vw !important;
+        height: calc(100dvh - var(--taskbar-height) - 18px) !important;
+        max-height: calc(100dvh - var(--taskbar-height) - 18px) !important;
+        min-height: 0 !important;
+    }
+
+    #win-projects .window-body {
+        height: auto !important;
+        min-height: 0;
+        max-height: none !important;
+        overflow: hidden;
+    }
+
+    .project-explorer {
+        height: 100%;
+        min-height: 0;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        overflow: hidden;
+    }
+
+    .explorer-toolbar {
+        min-height: 41px;
+        max-height: none;
+        padding: 5px;
+        gap: 4px;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+
+    .toolbar-btn {
+        min-width: 29px;
+        height: 27px;
+        padding: 2px 6px;
+        font-size: 16px;
+        flex-shrink: 0;
+    }
+
+    .address-bar {
+        min-width: 0;
+        height: 27px;
+        flex: 1;
+        font-size: 17px;
+    }
+
+    .address-bar input {
+        min-width: 0;
+        font-size: 17px;
+    }
+
+    .explorer-main {
+        min-height: 0;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: minmax(120px, 30dvh) minmax(0, 1fr);
+        overflow: hidden;
+    }
+
+    .explorer-sidebar {
+        width: 100%;
+        max-height: 30dvh;
+        min-height: 120px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        border-right: 2px solid;
+        border-bottom: 2px solid;
+        border-color: var(--win-black) var(--win-light) var(--win-light) var(--win-black);
+    }
+
+    .explorer-header {
+        height: 30px;
+        font-size: 18px;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+
+    .tree-folder-row,
+    .tree-file-row {
+        min-height: 27px;
+        font-size: 17px;
+        overflow: hidden;
+    }
+
+    .tree-label {
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .tree-level-0 {
+        padding-left: 7px;
+    }
+
+    .tree-level-1 {
+        padding-left: 20px;
+    }
+
+    .tree-level-2 {
+        padding-left: 34px;
+    }
+
+    .explorer-right {
+        min-height: 0;
+        height: 100%;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        overflow: hidden;
+    }
+
+    .file-path-header {
+        height: auto;
+        min-height: 31px;
+        padding: 6px 8px;
+        font-size: 17px;
+        overflow: hidden;
+    }
+
+    .file-path-header span {
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .detail-pane {
+        min-height: 0;
+        height: calc(100dvh - 378px) !important;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 9px;
+    }
+
+    .folder-view {
+        grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .folder-item-card {
+        min-height: 82px;
+        padding: 6px 4px;
+        font-size: 15px;
+    }
+
+    .folder-item-card i {
+        font-size: 29px;
+    }
+
+    .folder-item-name {
+        max-width: 75px;
+        overflow-wrap: anywhere;
+        line-height: 1.05;
+    }
+
+    .project-detail-view {
+        min-height: 0;
+        width: 100%;
+    }
+
+    .project-preview {
+        height: clamp(120px, 26dvh, 210px);
+        min-height: 120px;
+        max-height: 210px;
+        overflow: hidden;
+        font-size: 19px;
+    }
+
+    .project-preview i {
+        font-size: 36px;
+        margin-bottom: 5px;
+    }
+
+    .project-preview-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .detail-title {
+        font-size: 23px;
+        line-height: 1;
+        margin-bottom: 7px;
+    }
+
+    .detail-description {
+        font-size: 18px;
+        line-height: 1.25;
+    }
+
+    .tag-row {
+        gap: 4px;
+    }
+
+    .tag {
+        max-width: 100%;
+        font-size: 15px;
+        padding: 3px 6px;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* =========================================================
+   TECH / SOFTWARE STACK MOBILE FIX
+   Cards stay inside the window
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .stack-grid {
+        grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+        gap: 7px;
+    }
+
+    .stack-card {
+        min-height: 74px;
+        padding: 8px 5px;
+        font-size: 16px;
+        overflow: hidden;
+    }
+
+    .stack-card i {
+        font-size: 24px;
+    }
+
+    .stack-card img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .svg-org-note {
+        font-size: 16px;
+        line-height: 1.25;
+    }
+}
+
+/* =========================================================
+   CONTACT WINDOW MOBILE FIX
+   Contact cards wrap correctly
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .contact-list {
+        gap: 7px;
+    }
+
+    .contact-item {
+        height: auto;
+        min-height: 48px;
+        align-items: flex-start;
+        font-size: 17px;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    .contact-item i,
+    .contact-item img {
+        flex-shrink: 0;
+    }
+}
+
+/* =========================================================
+   MUSIC WINDOW MOBILE FIX
+   Controls and playlist stay inside window
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    #win-music,
+    #music,
+    .window#win-music {
+        width: 96vw !important;
+        height: calc(100dvh - var(--taskbar-height) - 108px) !important;
+        max-height: calc(100dvh - var(--taskbar-height) - 108px) !important;
+        min-height: 0 !important;
+    }
+
+    #win-music .window-body,
+    #music .window-body {
+        min-height: 0;
+        max-height: none !important;
+        overflow: hidden;
+    }
+
+    .music-player {
+        height: 100%;
+        min-height: 0;
+        padding: 7px;
+        display: grid;
+        grid-template-rows: auto auto auto auto minmax(0, 1fr);
+        gap: 8px;
+        overflow: hidden;
+    }
+
+    .music-display {
+        grid-template-columns: 70px minmax(0, 1fr);
+        gap: 9px;
+        padding: 8px;
+        min-width: 0;
+    }
+
+    .music-art {
+        width: 66px;
+        height: 66px;
+        font-size: 33px;
+    }
+
+    .music-info {
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .music-label {
+        font-size: 16px;
+    }
+
+    .music-title {
+        max-width: 100%;
+        font-size: 21px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .music-artist {
+        max-width: 100%;
+        font-size: 16px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .youtube-player-box {
+        height: clamp(115px, 25dvh, 170px);
+        margin: 0;
+        min-height: 0;
+    }
+
+    .music-progress-wrap {
+        grid-template-columns: 37px minmax(0, 1fr) 37px;
+        gap: 6px;
+        margin: 0;
+        font-size: 16px;
+        min-width: 0;
+    }
+
+    .music-progress-wrap input,
+    .volume-row input {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .music-controls {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .music-btn {
+        min-width: 34px;
+        width: auto;
+        height: 31px;
+        padding: 3px 7px;
+        font-size: 15px;
+        flex: 0 0 auto;
+    }
+
+    .play-btn {
+        min-width: 45px;
+    }
+
+    .volume-row {
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 6px;
+        margin: 0;
+        font-size: 16px;
+        min-width: 0;
+    }
+
+    .playlist-box {
+        height: 100%;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .playlist-header {
+        height: 28px;
+        padding: 5px 7px;
+        font-size: 17px;
+    }
+
+    .playlist {
+        height: calc(100% - 28px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .playlist-item {
+        min-height: 29px;
+        padding: 5px 7px;
+        font-size: 16px;
+        min-width: 0;
+    }
+
+    .playlist-item span {
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+/* Extra small music fix */
+/* @media (max-width: 380px) {
+    .music-btn {
+        min-width: 31px;
+        height: 30px;
+        padding: 2px 5px;
+        font-size: 14px;
+    }
+
+    .play-btn {
+        min-width: 39px;
+    }
+
+    .music-display {
+        grid-template-columns: 58px minmax(0, 1fr);
+    }
+
+    .music-art {
+        width: 56px;
+        height: 56px;
+        font-size: 28px;
+    }
+
+    .music-title {
+        font-size: 19px;
+    }
+} */
+
+/* =========================================================
+   GAME WINDOW MOBILE FIX
+   Canvas and controls stay inside window
+   ========================================================= */
+
+@media (max-width: 700px) {
+    #win-games {
+        width: 96vw !important;
+        height: calc(100dvh - var(--taskbar-height) - 18px) !important;
+        max-height: calc(100dvh - var(--taskbar-height) - 18px) !important;
+        min-height: 0 !important;
+    }
+
+    #win-games .window-body,
+    .game-window-body {
+        min-height: 0;
+        max-height: none !important;
+        overflow: hidden;
+    }
+
+    .game-panel {
+        height: 100%;
+        min-height: 0;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        overflow: hidden;
+    }
+
+    .game-topbar {
+        min-height: 0;
+        max-height: 38dvh;
+        padding: 5px;
+        gap: 5px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .game-stat,
+    .game-btn {
+        min-height: 28px;
+        font-size: 16px;
+        padding: 3px 7px;
+    }
+
+    .game-lives img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .game-canvas-wrap {
+        min-height: 0;
+        height: 100%;
+        margin: 6px;
+        overflow: hidden;
+    }
+
+    #fruitGameCanvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .game-overlay {
+        padding: 14px;
+        font-size: 18px;
+        overflow: hidden;
+    }
+
+    .game-overlay h3 {
+        font-size: 31px;
+        line-height: 1;
+    }
+
+    .game-overlay p {
+        max-width: 100%;
+        font-size: 18px;
+        line-height: 1.2;
+    }
+}
+
+/* =========================================================
+   GENERAL SMALL DEVICE FIX
+   ========================================================= */
+
+/* @media (max-width: 420px) {
+    .window {
+        left: 1.5vw !important;
+        width: 97vw !important;
+        max-width: 97vw !important;
+    }
+
+    .window-body {
+        padding: 6px;
+    }
+
+    .window-content,
+    .window-content-fixed {
+        padding: 8px;
+        font-size: 17px;
+    }
+
+    .title-bar {
+        font-size: 16px;
+    }
+
+    .desktop-icon {
+        width: 72px;
+    }
+
+    .desktop-label {
+        font-size: 15px;
+    }
+
+    .system-tray {
+        display: none;
+    }
+
+    .taskbar-app-btn {
+        min-width: 78px;
+        max-width: 104px;
+    }
+} */
+
+/* =========================================================
+   FRUIT SLICE GAME WINDOW MOBILE RESPONSIVE FIX
+   Target: #win-fruit
+   ========================================================= */
+
+@media (max-width: 700px) {
+    #win-fruit {
+        width: 96vw !important;
+        height: calc(100dvh - var(--taskbar-height) - 18px) !important;
+        max-width: 96vw !important;
+        max-height: calc(100dvh - var(--taskbar-height) - 18px) !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        left: 2vw !important;
+        top: 10px !important;
+        overflow: hidden;
+    }
+
+    #win-fruit.maximized {
+        width: 100vw !important;
+        height: calc(100dvh - var(--taskbar-height)) !important;
+        max-width: 100vw !important;
+        max-height: calc(100dvh - var(--taskbar-height)) !important;
+        left: 0 !important;
+        top: 0 !important;
+    }
+
+    #win-fruit .window-body,
+    #win-fruit .game-window-body {
+        height: calc(100% - 28px) !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 7px;
+        overflow: hidden;
+    }
+
+    #win-fruit .game-panel {
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        overflow: hidden;
+    }
+
+    #win-fruit .game-topbar {
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        max-height: 34dvh;
+        display: flex;
+        align-items: center;
+        /* flex-wrap: wrap; */
+        gap: 5px;
+        padding: 5px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex-direction: row;
+    }
+
+    #win-fruit .game-stat,
+    #win-fruit .game-btn {
+        max-width: 100%;
+        height: 28px;
+        padding: 3px 7px;
+        font-size: 16px;
+        line-height: 1;
+        flex: 0 1 auto;
+        white-space: nowrap;
+    }
+
+    #win-fruit .game-lives {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 3px;
+        overflow: hidden;
+    }
+
+    #win-fruit .game-lives img {
+        width: 17px;
+        height: 17px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    #win-fruit .game-canvas-wrap {
+        width: 100%;
+        height: 100%;
+        min-width: 0;
+        min-height: 0;
+        margin: 0;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #win-fruit #fruitGameCanvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+        touch-action: none;
+    }
+
+    #win-fruit .game-overlay {
+        position: absolute;
+        inset: 0;
+        max-width: 100%;
+        max-height: 100%;
+        padding: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+        overflow: hidden;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    #win-fruit .game-overlay h3 {
+        margin: 0;
+        font-size: clamp(28px, 9vw, 38px);
+        line-height: 1;
+    }
+
+    #win-fruit .game-overlay p {
+        margin: 0;
+        max-width: 100%;
+        font-size: 18px;
+        line-height: 1.2;
+    }
+
+    #win-fruit .game-overlay .game-btn {
+        width: auto;
+        max-width: 100%;
+        height: 28px;
+        white-space: normal;
+    }
+}
+
+/* Extra small screen fix */
+/* @media (max-width: 380px) {
+    #win-fruit .game-topbar {
+        align-items: stretch;
+    }
+
+    #win-fruit .game-stat,
+    #win-fruit .game-btn {
+        font-size: 15px;
+        padding: 3px 6px;
+    }
+
+    #win-fruit .game-btn {
+        flex: 1 1 calc(50% - 5px);
+        text-align: center;
+    }
+
+    #win-fruit .game-stat {
+        flex: 1 1 100%;
+    }
+
+    #win-fruit .game-overlay p {
+        font-size: 16px;
+    }
+} */
