@@ -42,53 +42,61 @@
     <main class="desktop" id="desktop" onclick="unselectDesktopIcons()">
         <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-about')"
             tabindex="0">
-            <div class="desktop-icon-box"><img src="/assets/icon/about.webp" loading="eager" alt="about me"></div>
+            <div class="desktop-icon-box"><img src="/assets/icon/about.webp" loading="eager" fetchpriority="high"
+                    alt="about me"></div>
             <div class="desktop-label">About Me</div>
         </div>
 
         <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('resume')"
             tabindex="0">
-            <div class="desktop-icon-box"><img src="/assets/icon/resume.webp" loading="eager" alt="resume"></div>
+            <div class="desktop-icon-box"><img src="/assets/icon/resume.webp" loading="eager" fetchpriority="high"
+                    alt="resume"></div>
             <div class="desktop-label">Resume.pdf</div>
         </div>
 
         <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-tech')"
             tabindex="0">
-            <div class="desktop-icon-box"><img src="/assets/icon/tech-stack.webp" loading="eager" alt="tech stack">
+            <div class="desktop-icon-box"><img src="/assets/icon/tech-stack.webp" loading="eager" fetchpriority="high"
+                    alt="tech stack">
             </div>
             <div class="desktop-label">Tech Stack</div>
         </div>
 
         <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-projects')"
             tabindex="0">
-            <div class="desktop-icon-box"><img src="/assets/icon/project.webp" loading="eager" alt="projects">
+            <div class="desktop-icon-box"><img src="/assets/icon/project.webp" loading="eager" fetchpriority="high"
+                    alt="projects">
             </div>
             <div class="desktop-label">Projects</div>
         </div>
 
         <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-contact')"
             tabindex="0">
-            <div class="desktop-icon-box"><img src="/assets/icon/contact.webp" loading="eager" alt="contact">
+            <div class="desktop-icon-box"><img src="/assets/icon/contact.webp" loading="eager" fetchpriority="high"
+                    alt="contact">
             </div>
             <div class="desktop-label">Contact</div>
         </div>
 
         <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-music')"
             tabindex="0">
-            <div class="desktop-icon-box"><img src="/assets/icon/music.webp" loading="eager" alt="music">
+            <div class="desktop-icon-box"><img src="/assets/icon/music.webp" loading="eager" fetchpriority="high"
+                    alt="music">
             </div>
             <div class="desktop-label">Music Player</div>
         </div>
 
         <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-games')"
             tabindex="0">
-            <div class="desktop-icon-box"><img src="/assets/icon/game.webp" loading="eager" alt="touch games"></div>
+            <div class="desktop-icon-box"><img src="/assets/icon/game.webp" loading="eager" fetchpriority="high"
+                    alt="touch games"></div>
             <div class="desktop-label">Mini Games</div>
         </div>
 
         <div class="desktop-icon" onclick="selectDesktopIcon(event, this)" ondblclick="openWindow('win-fruit')"
             tabindex="0">
-            <div class="desktop-icon-box"><img src="/assets/icon/fruit game.webp" loading="eager" alt="games"></div>
+            <div class="desktop-icon-box"><img src="/assets/icon/fruit game.webp" loading="eager" fetchpriority="high"
+                    alt="games"></div>
             <div class="desktop-label">Games</div>
         </div>
     </main>
@@ -696,7 +704,7 @@
     <footer class="taskbar">
         <div class="taskbar-left">
             <button class="start-button" id="startButton" onclick="toggleStartMenu(event)">
-                <img src="/assets/icon/start-menu.webp" loading="eager" alt="start button">
+                <img src="/assets/icon/start-menu.webp" loading="eager" fetchpriority="high" alt="start button">
                 Start
             </button>
             <div class="taskbar-divider"></div>
